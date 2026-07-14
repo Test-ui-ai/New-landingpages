@@ -317,7 +317,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "NanoCapital",
-  url: "https://nanocapital.example",
+  url: "https://nanocapital-payment-commerce.anantasuk.chatgpt.site",
   description:
     "NanoCapital provides payment, commerce, blockchain, AI, Web2, Web3, FinTech, ERP, NFT, RWA, DEX, and enterprise software development solutions.",
   sameAs: projects.map((project) => project.website),

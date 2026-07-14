@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nanocapital.example"),
+  metadataBase: new URL("https://nanocapital-payment-commerce.anantasuk.chatgpt.site"),
   title: {
     default: "NanoCapital | Payment and Commerce Solutions",
     template: "%s | NanoCapital",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "NanoCapital | Payment and Commerce Solutions",
     description:
       "Launch payment and commerce platforms with proven technology, transparent terms, and fast custom development.",
-    url: "https://nanocapital.example",
+    url: "https://nanocapital-payment-commerce.anantasuk.chatgpt.site",
     siteName: "NanoCapital",
     type: "website",
   },
