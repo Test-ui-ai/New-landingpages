@@ -1,0 +1,12 @@
+.agents
+.codex
+.impeccable
+.git
+.vercel
+.wrangler
+.vinext
+dev-logs
+dist
+node_modules
+outputs
+work
