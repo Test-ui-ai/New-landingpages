@@ -29,8 +29,6 @@ const heroHighlights = [
   "Pay Solution",
   "Shopping Mall Solution",
   "Custom Development",
-  "Two-Week Custom Function Delivery",
-  "Enterprise and Blockchain Integration",
 ];
 
 const metrics = [
@@ -539,25 +537,19 @@ export default function Home() {
             <div className="hero-copy">
               <p className="kicker">Operating system for payment and commerce diligence</p>
               <h1>
-                Payment and Commerce Solutions,
-                <span>Built for Your Business</span>
+                Payment and Commerce Solutions
+                <span>Built for Operators</span>
               </h1>
               <p className="lead">
-                Launch your payment platform and online shopping ecosystem with
-                NanoCapital&apos;s proven technology, customizable modules, and
-                experienced development team.
-              </p>
-              <p className="hero-support">
-                From payment processing and shopping mall infrastructure to AI
-                and blockchain integration, we help businesses move from concept
-                to production.
+                Launch payment, commerce, and custom platform infrastructure
+                with NanoCapital&apos;s proven development team.
               </p>
               <div className="hero-actions">
                 <a className="btn primary large" href="#contact">
-                  Request a Solution Demo
+                  Request Demo
                 </a>
                 <a className="btn secondary large" href="#portfolio">
-                  View Our Portfolio
+                  View Portfolio
                 </a>
               </div>
               <div className="hero-highlights" aria-label="Solution highlights">

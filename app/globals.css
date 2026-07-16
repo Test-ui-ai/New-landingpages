@@ -285,10 +285,10 @@ p {
 }
 
 h1 {
-  max-width: 820px;
-  margin-bottom: 24px;
-  font-size: clamp(3.1rem, 7.4vw, 6rem);
-  line-height: 0.98;
+  max-width: 760px;
+  margin-bottom: 22px;
+  font-size: clamp(3rem, 6.4vw, 5.35rem);
+  line-height: 1;
   letter-spacing: 0;
   text-wrap: balance;
 }
@@ -299,29 +299,22 @@ h1 span {
 }
 
 .lead {
-  max-width: 720px;
+  max-width: 660px;
   color: rgba(247, 247, 242, 0.9);
-  font-size: clamp(1.08rem, 1.8vw, 1.35rem);
-  line-height: 1.65;
-}
-
-.hero-support {
-  max-width: 700px;
-  color: rgba(247, 247, 242, 0.66);
-  line-height: 1.75;
-  text-wrap: pretty;
+  font-size: clamp(1.04rem, 1.55vw, 1.22rem);
+  line-height: 1.55;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin: 32px 0;
+  margin: 28px 0 26px;
 }
 
 .hero-highlights {
   display: flex;
-  max-width: 760px;
+  max-width: 620px;
   flex-wrap: wrap;
   gap: 10px;
 }
