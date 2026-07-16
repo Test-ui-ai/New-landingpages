@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useMemo, useState } from "react";
+import type { CSSProperties, FormEvent } from "react";
+import { useMemo, useState } from "react";
 
 type ProjectTag =
   | "AI"
@@ -940,6 +941,10 @@ function FeatureList({ items }: { items: string[] }) {
   );
 }
 
+function motionIndex(index: number): CSSProperties {
+  return { "--i": index } as CSSProperties;
+}
+
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("ko");
   const [activeFilter, setActiveFilter] = useState<FilterValue>("All");
@@ -1072,8 +1077,10 @@ export default function Home() {
                 </a>
               </div>
               <div className="hero-highlights" aria-label="Solution highlights">
-                {heroHighlights[locale].map((item) => (
-                  <span key={item}>{item}</span>
+                {heroHighlights[locale].map((item, index) => (
+                  <span key={item} style={motionIndex(index)}>
+                    {item}
+                  </span>
                 ))}
               </div>
             </div>
@@ -1101,8 +1108,13 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                {diligenceRows[locale].map(([workstream, rowStatus, evidence, signal]) => (
-                  <div role="row" className="terminal-row" key={workstream}>
+                {diligenceRows[locale].map(([workstream, rowStatus, evidence, signal], index) => (
+                  <div
+                    role="row"
+                    className="terminal-row"
+                    key={workstream}
+                    style={motionIndex(index + 1)}
+                  >
                     <span role="cell">{workstream}</span>
                     <span role="cell">{rowStatus}</span>
                     <span role="cell">{evidence}</span>
@@ -1124,8 +1136,8 @@ export default function Home() {
             </div>
 
             <div className="metric-strip" aria-label="NanoCapital operating metrics">
-              {metrics[locale].map(([value, label]) => (
-                <div key={label}>
+              {metrics[locale].map(([value, label], index) => (
+                <div key={label} style={motionIndex(index)}>
                   <strong>{value}</strong>
                   <span>{label}</span>
                 </div>
@@ -1140,13 +1152,13 @@ export default function Home() {
               body={t.sections.solutionBody}
             />
             <div className="solution-grid">
-              <article className="solution-card">
+              <article className="solution-card" style={motionIndex(0)}>
                 <span className="card-index">01</span>
                 <h3>NanoCapital Pay Solution</h3>
                 <p>{t.sections.payBody}</p>
                 <FeatureList items={payFeatures[locale]} />
               </article>
-              <article className="solution-card dark-card">
+              <article className="solution-card dark-card" style={motionIndex(1)}>
                 <span className="card-index">02</span>
                 <h3>Shopping Mall Solution</h3>
                 <p>{t.sections.mallBody}</p>
@@ -1164,7 +1176,7 @@ export default function Home() {
             />
             <div className="process-grid">
               {processSteps[locale].map((step, index) => (
-                <article className="process-card" key={step.title}>
+                <article className="process-card" key={step.title} style={motionIndex(index)}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>{step.title}</h3>
                   <p>{step.body}</p>
@@ -1189,8 +1201,8 @@ export default function Home() {
               <strong>{t.sections.exchangeValue}</strong>
             </div>
             <div className="terms-grid">
-              {commercialTerms[locale].map((term) => (
-                <article className="term-card" key={term.label}>
+              {commercialTerms[locale].map((term, index) => (
+                <article className="term-card" key={term.label} style={motionIndex(index)}>
                   <p>{term.label}</p>
                   <h3>{term.amount}</h3>
                   <strong>{term.usd}</strong>
@@ -1220,8 +1232,8 @@ export default function Home() {
               title={t.sections.timelineTitle}
             />
             <div className="timeline">
-              {timeline[locale].map(([day, item]) => (
-                <article className="timeline-item" key={day}>
+              {timeline[locale].map(([day, item], index) => (
+                <article className="timeline-item" key={day} style={motionIndex(index)}>
                   <span>{day}</span>
                   <p>{item}</p>
                 </article>
@@ -1239,13 +1251,14 @@ export default function Home() {
                 body={t.sections.portfolioBody}
               />
               <div className="filter-row" aria-label="Portfolio filters">
-                {filters.map((filter) => (
+                {filters.map((filter, index) => (
                   <button
                     className={filter.value === activeFilter ? "active" : ""}
                     key={filter.value}
                     onClick={() => setActiveFilter(filter.value)}
                     type="button"
                     aria-pressed={filter.value === activeFilter}
+                    style={motionIndex(index)}
                   >
                     {filter[locale]}
                   </button>
@@ -1253,8 +1266,12 @@ export default function Home() {
               </div>
             </div>
             <div className="portfolio-grid">
-              {filteredProjects.map((project) => (
-                <article className="portfolio-card" key={project.name}>
+              {filteredProjects.map((project, index) => (
+                <article
+                  className="portfolio-card"
+                  key={project.name}
+                  style={motionIndex(index)}
+                >
                   <div className="portfolio-shot">
                     <Image
                       alt={project.screenshotAlt}
@@ -1304,16 +1321,18 @@ export default function Home() {
               title={t.sections.techTitle}
             />
             <div className="capability-grid">
-              {capabilities[locale].map(([title, body]) => (
-                <article className="capability-card" key={title}>
+              {capabilities[locale].map(([title, body], index) => (
+                <article className="capability-card" key={title} style={motionIndex(index)}>
                   <h3>{title}</h3>
                   <p>{body}</p>
                 </article>
               ))}
             </div>
             <div className="keyword-cloud" aria-label="Technical keywords">
-              {keywords[locale].map((keyword) => (
-                <span key={keyword}>{keyword}</span>
+              {keywords[locale].map((keyword, index) => (
+                <span key={keyword} style={motionIndex(index)}>
+                  {keyword}
+                </span>
               ))}
             </div>
           </section>
@@ -1324,8 +1343,8 @@ export default function Home() {
               title={t.sections.trustTitle}
             />
             <div className="trust-grid">
-              {trustCards[locale].map(([title, body]) => (
-                <article className="trust-card" key={title}>
+              {trustCards[locale].map(([title, body], index) => (
+                <article className="trust-card" key={title} style={motionIndex(index)}>
                   <h3>{title}</h3>
                   <p>{body}</p>
                 </article>
@@ -1339,8 +1358,10 @@ export default function Home() {
               title={t.sections.securityTitle}
             />
             <div className="security-grid">
-              {securityItems[locale].map((item) => (
-                <span key={item}>{item}</span>
+              {securityItems[locale].map((item, index) => (
+                <span key={item} style={motionIndex(index)}>
+                  {item}
+                </span>
               ))}
             </div>
             <p className="timeline-disclaimer">{t.sections.securityBody}</p>
@@ -1352,8 +1373,8 @@ export default function Home() {
               title={t.sections.faqTitle}
             />
             <div className="faq-list">
-              {faqs[locale].map(([question, answer]) => (
-                <details key={question}>
+              {faqs[locale].map(([question, answer], index) => (
+                <details key={question} style={motionIndex(index)}>
                   <summary>{question}</summary>
                   <p>{answer}</p>
                 </details>

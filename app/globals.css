@@ -19,6 +19,8 @@
   --shadow-soft: 0 8px 14px rgba(17, 20, 27, 0.08);
   --space-page: clamp(18px, 4vw, 64px);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 * {
@@ -165,17 +167,29 @@ summary {
   min-width: 34px;
   min-height: 34px;
   border: 0;
+  border-radius: 6px;
   background: transparent;
   color: inherit;
   cursor: pointer;
   font-weight: 800;
+  transition:
+    background 180ms var(--ease-out),
+    color 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
 }
 
 .language-switch button[aria-pressed="true"] {
+  background: rgba(247, 247, 242, 0.1);
   color: var(--paper);
 }
 
+.language-switch button:hover {
+  transform: translateY(-1px);
+}
+
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -190,16 +204,34 @@ summary {
     transform 180ms var(--ease-out),
     border-color 180ms var(--ease-out),
     background 180ms var(--ease-out),
-    color 180ms var(--ease-out);
+    color 180ms var(--ease-out),
+    opacity 180ms var(--ease-out);
   white-space: nowrap;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.985);
+}
+
+.btn::after {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn:active::after {
+  animation: control-ripple 360ms var(--ease-out);
 }
 
 .btn.primary {
@@ -249,6 +281,24 @@ summary {
     linear-gradient(115deg, rgba(29, 100, 255, 0.16), transparent 38%),
     linear-gradient(180deg, rgba(247, 247, 242, 0.05), transparent 34%),
     var(--black);
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    transparent 42%,
+    rgba(55, 228, 208, 0.1) 49%,
+    transparent 56%,
+    transparent 100%
+  );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-42%);
+  animation: hero-sweep 300ms 120ms var(--ease-expo) both;
 }
 
 .hero-copy,
@@ -333,9 +383,26 @@ h1 span {
   color: rgba(247, 247, 242, 0.78);
   font-size: 0.86rem;
   font-weight: 750;
+  transition:
+    border-color 180ms var(--ease-out),
+    background 180ms var(--ease-out),
+    color 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
+}
+
+.hero-highlights span {
+  animation: chip-confirm 520ms var(--ease-out) both;
+  animation-delay: calc(520ms + var(--i, 0) * 70ms);
+}
+
+.hero-highlights span:hover,
+.keyword-cloud span:hover,
+.security-grid span:hover {
+  transform: translateY(-2px);
 }
 
 .terminal-panel {
+  overflow: hidden;
   border: 1px solid var(--line-dark);
   border-radius: 10px;
   padding: clamp(18px, 3vw, 28px);
@@ -343,6 +410,7 @@ h1 span {
     linear-gradient(180deg, rgba(247, 247, 242, 0.07), rgba(247, 247, 242, 0.02)),
     var(--carbon);
   box-shadow: var(--shadow-panel);
+  transform-origin: 50% 42%;
 }
 
 .terminal-panel::before {
@@ -353,6 +421,22 @@ h1 span {
   content: "";
   pointer-events: none;
   mask-image: linear-gradient(to bottom, var(--black), transparent 82%);
+}
+
+.terminal-panel::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(55, 228, 208, 0.16),
+    transparent
+  );
+  content: "";
+  opacity: 0.62;
+  pointer-events: none;
+  transform: translateY(-105%);
+  animation: terminal-scan 300ms 360ms var(--ease-expo) both;
 }
 
 .terminal-topline,
@@ -412,6 +496,11 @@ h1 span {
   border-top: 1px solid rgba(247, 247, 242, 0.08);
 }
 
+.terminal-row:not(.terminal-head) {
+  animation: row-confirm 520ms var(--ease-out) both;
+  animation-delay: calc(760ms + var(--i, 0) * 70ms);
+}
+
 .terminal-row:first-child {
   border-top: 0;
 }
@@ -452,26 +541,33 @@ h1 span {
   min-width: 22px;
   border-radius: 3px 3px 0 0;
   background: linear-gradient(180deg, var(--cyan), var(--blue));
+  transform-origin: 50% 100%;
+  animation: bar-confirm 260ms var(--ease-out) both;
 }
 
 .flow-bars i:nth-child(1) {
   height: 18px;
+  animation-delay: 420ms;
 }
 
 .flow-bars i:nth-child(2) {
   height: 32px;
+  animation-delay: 470ms;
 }
 
 .flow-bars i:nth-child(3) {
   height: 24px;
+  animation-delay: 520ms;
 }
 
 .flow-bars i:nth-child(4) {
   height: 44px;
+  animation-delay: 570ms;
 }
 
 .flow-bars i:nth-child(5) {
   height: 30px;
+  animation-delay: 620ms;
 }
 
 .metric-strip {
@@ -593,6 +689,20 @@ h1 span {
   border-radius: 10px;
   background: var(--white);
   box-shadow: var(--shadow-soft);
+  transition:
+    transform 220ms var(--ease-out),
+    border-color 220ms var(--ease-out),
+    opacity 220ms var(--ease-out);
+}
+
+.solution-card:hover,
+.term-card:hover,
+.portfolio-card:hover,
+.capability-card:hover,
+.trust-card:hover,
+.process-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(29, 100, 255, 0.28);
 }
 
 .solution-card {
@@ -665,6 +775,12 @@ h1 span {
   border-radius: 50%;
   background: var(--blue);
   content: "";
+  transform: scale(0.8);
+  transition: transform 180ms var(--ease-out);
+}
+
+.solution-card:hover .feature-list li::before {
+  transform: scale(1);
 }
 
 .dark-card .feature-list li::before {
@@ -855,6 +971,18 @@ h1 span {
   cursor: pointer;
   font-size: 0.86rem;
   font-weight: 850;
+  transition:
+    transform 180ms var(--ease-out),
+    border-color 180ms var(--ease-out),
+    background 180ms var(--ease-out),
+    color 180ms var(--ease-out);
+  animation: chip-confirm 420ms var(--ease-out) both;
+  animation-delay: calc(120ms + var(--i, 0) * 45ms);
+}
+
+.filter-row button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(29, 100, 255, 0.45);
 }
 
 .filter-row button.active {
@@ -891,6 +1019,11 @@ h1 span {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  transition: transform 260ms var(--ease-out);
+}
+
+.portfolio-card:hover .portfolio-shot img {
+  transform: scale(1.025);
 }
 
 .portfolio-card > span {
@@ -918,6 +1051,13 @@ h1 span {
   margin: auto 24px 22px;
   color: var(--blue);
   font-weight: 900;
+  transition:
+    color 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
+}
+
+.portfolio-card a:hover {
+  transform: translateX(3px);
 }
 
 .capability-grid,
@@ -970,13 +1110,38 @@ h1 span {
   border-radius: 10px;
   background: var(--white);
   box-shadow: var(--shadow-soft);
+  transition:
+    border-color 220ms var(--ease-out),
+    opacity 220ms var(--ease-out);
+}
+
+.faq-list details[open] {
+  border-color: rgba(29, 100, 255, 0.32);
 }
 
 .faq-list summary {
+  position: relative;
   min-height: 60px;
-  padding: 20px 22px;
+  padding: 20px 56px 20px 22px;
   cursor: pointer;
   font-weight: 900;
+}
+
+.faq-list summary::after {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  content: "";
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 220ms var(--ease-out);
+}
+
+.faq-list details[open] summary::after {
+  transform: translateY(-30%) rotate(225deg);
 }
 
 .faq-list p {
@@ -984,6 +1149,7 @@ h1 span {
   padding: 0 22px 22px;
   color: var(--muted);
   line-height: 1.65;
+  animation: answer-in 240ms var(--ease-out) both;
 }
 
 .contact-section {
@@ -1026,6 +1192,16 @@ h1 span {
   padding: 10px 12px;
   background: var(--white);
   color: var(--ink);
+  transition:
+    border-color 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue);
+  transform: translateY(-1px);
 }
 
 .contact-form textarea {
@@ -1035,6 +1211,7 @@ h1 span {
 
 .contact-form [aria-invalid="true"] {
   border-color: var(--error);
+  animation: field-attention 240ms var(--ease-out);
 }
 
 .contact-form small,
@@ -1053,6 +1230,12 @@ h1 span {
   width: 20px;
   min-height: 20px;
   margin-top: 2px;
+  accent-color: var(--blue);
+  transition: transform 140ms var(--ease-out);
+}
+
+.checkbox-label input:active {
+  transform: scale(0.92);
 }
 
 .success-message {
@@ -1063,6 +1246,7 @@ h1 span {
   background: rgba(31, 191, 154, 0.12);
   color: var(--success);
   font-weight: 800;
+  animation: success-confirm 420ms var(--ease-expo) both;
 }
 
 .footer {
@@ -1094,8 +1278,6 @@ h1 span {
 }
 
 .hero-copy,
-.terminal-panel,
-.metric-strip,
 .solution-card,
 .process-card,
 .time-callout,
@@ -1108,7 +1290,25 @@ h1 span {
 .faq-list details,
 .contact-copy,
 .contact-form {
-  animation: reveal-up 680ms var(--ease-out) both;
+  animation: reveal-up 280ms var(--ease-expo) both;
+  animation-delay: calc(90ms + var(--i, 0) * 38ms);
+}
+
+.hero-copy {
+  animation: hero-copy-in 300ms 120ms var(--ease-expo) both;
+}
+
+.terminal-panel {
+  animation: terminal-boot 300ms 220ms var(--ease-expo) both;
+}
+
+.metric-strip {
+  animation: reveal-up 280ms 360ms var(--ease-expo) both;
+}
+
+.metric-strip div {
+  animation: metric-confirm 240ms var(--ease-out) both;
+  animation-delay: calc(460ms + var(--i, 0) * 60ms);
 }
 
 @keyframes reveal-up {
@@ -1120,6 +1320,161 @@ h1 span {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-sweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-42%);
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(42%);
+  }
+}
+
+@keyframes terminal-boot {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes terminal-scan {
+  0% {
+    opacity: 0;
+    transform: translateY(-105%);
+  }
+
+  20% {
+    opacity: 0.62;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(105%);
+  }
+}
+
+@keyframes row-confirm {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bar-confirm {
+  from {
+    opacity: 0;
+    transform: scaleY(0.72);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes chip-confirm {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes metric-confirm {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes control-ripple {
+  0% {
+    opacity: 0.22;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(26);
+  }
+}
+
+@keyframes answer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes field-attention {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  35% {
+    transform: translateX(-3px);
+  }
+
+  70% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes success-confirm {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -1135,6 +1490,11 @@ h1 span {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero::after,
+  .terminal-panel::after {
+    display: none;
   }
 }
 
