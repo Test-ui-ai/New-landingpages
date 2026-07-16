@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Lost Tesla Art NFT preview</title>
+  <desc id="desc">Institutional preview card for the Lost Tesla Art NFT portfolio project.</desc>
+  <rect width="1440" height="900" fill="#050608"/>
+  <path d="M0 160h1440M0 320h1440M0 480h1440M0 640h1440M0 800h1440M160 0v900M320 0v900M480 0v900M640 0v900M800 0v900M960 0v900M1120 0v900M1280 0v900" stroke="#f7f7f2" stroke-opacity=".07"/>
+  <rect x="120" y="116" width="1200" height="668" rx="18" fill="#101114" stroke="#f7f7f2" stroke-opacity=".18"/>
+  <text x="176" y="196" fill="#37e4d0" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">WEB3 / NFT MARKETPLACE</text>
+  <text x="176" y="348" fill="#f7f7f2" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800">Lost Tesla Art NFT</text>
+  <text x="176" y="426" fill="#a8abb3" font-family="Arial, Helvetica, sans-serif" font-size="32">Live domain unavailable during capture</text>
+  <rect x="176" y="520" width="320" height="120" rx="10" fill="#f7f7f2"/>
+  <text x="210" y="592" fill="#050608" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">2 month build</text>
+  <rect x="532" y="520" width="360" height="120" rx="10" fill="#16181d" stroke="#f7f7f2" stroke-opacity=".16"/>
+  <text x="566" y="592" fill="#f7f7f2" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">NFT platform</text>
+  <rect x="928" y="520" width="320" height="120" rx="10" fill="#16181d" stroke="#f7f7f2" stroke-opacity=".16"/>
+  <text x="962" y="592" fill="#f7f7f2" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">Web3</text>
+</svg>

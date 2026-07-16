@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mission Hunter preview</title>
+  <desc id="desc">Institutional preview card for the Mission Hunter portfolio project.</desc>
+  <rect width="1440" height="900" fill="#050608"/>
+  <path d="M0 180h1440M0 360h1440M0 540h1440M0 720h1440M180 0v900M360 0v900M540 0v900M720 0v900M900 0v900M1080 0v900M1260 0v900" stroke="#f7f7f2" stroke-opacity=".07"/>
+  <rect x="120" y="116" width="1200" height="668" rx="18" fill="#101114" stroke="#f7f7f2" stroke-opacity=".18"/>
+  <text x="176" y="196" fill="#37e4d0" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">LOCATION NFT MARKETING</text>
+  <text x="176" y="348" fill="#f7f7f2" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800">Mission Hunter</text>
+  <text x="176" y="426" fill="#a8abb3" font-family="Arial, Helvetica, sans-serif" font-size="32">Campaign mechanics, missions, and NFT rewards</text>
+  <circle cx="1030" cy="570" r="122" fill="none" stroke="#37e4d0" stroke-width="12"/>
+  <circle cx="1030" cy="570" r="48" fill="#37e4d0"/>
+  <rect x="176" y="536" width="500" height="96" rx="10" fill="#f7f7f2"/>
+  <text x="210" y="596" fill="#050608" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">3 month build / Web3</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">HUB Membership preview</title>
+  <desc id="desc">Institutional preview card for the HUB Membership portfolio project.</desc>
+  <rect width="1440" height="900" fill="#f7f7f2"/>
+  <path d="M0 150h1440M0 300h1440M0 450h1440M0 600h1440M0 750h1440M150 0v900M300 0v900M450 0v900M600 0v900M750 0v900M900 0v900M1050 0v900M1200 0v900M1350 0v900" stroke="#050608" stroke-opacity=".07"/>
+  <rect x="120" y="108" width="1200" height="684" rx="18" fill="#ffffff" stroke="#d7d9de"/>
+  <text x="176" y="196" fill="#1d64ff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">FINTECH / CRYPTO PAYMENT</text>
+  <text x="176" y="348" fill="#101114" font-family="Arial, Helvetica, sans-serif" font-size="90" font-weight="800">HUB Membership</text>
+  <text x="176" y="426" fill="#60646f" font-family="Arial, Helvetica, sans-serif" font-size="32">Membership and settlement payment platform</text>
+  <rect x="176" y="520" width="334" height="118" rx="10" fill="#050608"/>
+  <rect x="552" y="520" width="334" height="118" rx="10" fill="#f3f4f6" stroke="#d7d9de"/>
+  <rect x="928" y="520" width="240" height="118" rx="10" fill="#f3f4f6" stroke="#d7d9de"/>
+  <text x="214" y="592" fill="#f7f7f2" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">3 months</text>
+  <text x="590" y="592" fill="#050608" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">FinTech</text>
+  <text x="966" y="592" fill="#050608" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">USDT</text>
+</svg>

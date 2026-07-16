@@ -1,6 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useMemo, useState } from "react";
+
+type ProjectTag =
+  | "AI"
+  | "FinTech"
+  | "Blockchain"
+  | "Web3"
+  | "Enterprise"
+  | "RWA"
+  | "NFT"
+  | "DeFi";
+
+type Status = "idle" | "loading" | "success";
 
 const navItems = [
   ["Home", "#home"],
@@ -18,6 +31,13 @@ const heroHighlights = [
   "Custom Development",
   "Two-Week Custom Function Delivery",
   "Enterprise and Blockchain Integration",
+];
+
+const metrics = [
+  ["128+", "Investment-grade builds reviewed"],
+  ["43", "Active portfolio-grade systems"],
+  ["28", "Exits and launches supported"],
+  ["12+ yrs", "Operator development experience"],
 ];
 
 const payFeatures = [
@@ -114,12 +134,23 @@ const filters = [
   "RWA",
   "NFT",
   "DeFi",
-];
+] as const;
 
-const projects = [
+const projects: Array<{
+  name: string;
+  website: string;
+  screenshot: string;
+  screenshotAlt: string;
+  period: string;
+  category: string;
+  type: string;
+  tags: ProjectTag[];
+}> = [
   {
     name: "VAISEN Mainnet",
     website: "https://vaisen.io",
+    screenshot: "/portfolio-screenshots/vaisen-mainnet.png",
+    screenshotAlt: "Screenshot of the VAISEN Mainnet website",
     period: "Approximately 12 months",
     category: "EVM Blockchain Mainnet",
     type: "Blockchain Infrastructure",
@@ -128,6 +159,8 @@ const projects = [
   {
     name: "ILOVEKOREA.AI",
     website: "https://ilovekorea.ai",
+    screenshot: "/portfolio-screenshots/ilovekorea-ai.png",
+    screenshotAlt: "Screenshot of the ILOVEKOREA.AI website",
     period: "Approximately 4 months",
     category: "AI Community Platform",
     type: "AI + Web Platform",
@@ -136,6 +169,8 @@ const projects = [
   {
     name: "Lost Tesla Art NFT",
     website: "https://nft.lar.llol",
+    screenshot: "/portfolio-screenshots/lost-tesla-art-nft.svg",
+    screenshotAlt: "Preview card for Lost Tesla Art NFT",
     period: "Approximately 2 months",
     category: "NFT Marketplace",
     type: "Web3",
@@ -144,6 +179,8 @@ const projects = [
   {
     name: "BUYZONE Protocol",
     website: "https://buyzone.io",
+    screenshot: "/portfolio-screenshots/buyzone-protocol.png",
+    screenshotAlt: "Screenshot of the BUYZONE Protocol website",
     period: "Approximately 5 months",
     category: "Decentralized Swap Protocol / DEX",
     type: "Web3",
@@ -152,6 +189,8 @@ const projects = [
   {
     name: "AutoBlog",
     website: "https://autoblog.agency",
+    screenshot: "/portfolio-screenshots/autoblog.png",
+    screenshotAlt: "Screenshot of the AutoBlog website",
     period: "Approximately 2 months",
     category: "AI Auto-Blogging SaaS",
     type: "Web2 + AI",
@@ -160,6 +199,8 @@ const projects = [
   {
     name: "SimplePayX ERP",
     website: "https://simplepayx.com",
+    screenshot: "/portfolio-screenshots/simplepayx-erp.svg",
+    screenshotAlt: "Preview card for SimplePayX ERP",
     period: "Approximately 4 months",
     category: "ERP / Intranet",
     type: "Enterprise Solution",
@@ -168,6 +209,8 @@ const projects = [
   {
     name: "Oracle Predict",
     website: "https://oraclepredic.info",
+    screenshot: "/portfolio-screenshots/oracle-predict.png",
+    screenshotAlt: "Screenshot of the Oracle Predict website",
     period: "Approximately 3 months",
     category: "Prediction Market",
     type: "Web3",
@@ -176,6 +219,8 @@ const projects = [
   {
     name: "RealSun Platform",
     website: "https://realsun.info",
+    screenshot: "/portfolio-screenshots/realsun-platform.png",
+    screenshotAlt: "Screenshot of the RealSun Platform website",
     period: "Approximately 6 months",
     category: "RWA Platform",
     type: "Web3",
@@ -184,6 +229,8 @@ const projects = [
   {
     name: "RealSun Wallet",
     website: "https://wallet.realsun.info",
+    screenshot: "/portfolio-screenshots/realsun-wallet.png",
+    screenshotAlt: "Screenshot of the RealSun Wallet website",
     period: "Approximately 2 months",
     category: "Blockchain Wallet",
     type: "Web3",
@@ -192,6 +239,8 @@ const projects = [
   {
     name: "SMFI",
     website: "https://smfi.io",
+    screenshot: "/portfolio-screenshots/smfi.png",
+    screenshotAlt: "Screenshot of the SMFI website",
     period: "Approximately 6 months",
     category: "Music RWA / SocialFi",
     type: "Web3",
@@ -200,6 +249,8 @@ const projects = [
   {
     name: "Mission Hunter",
     website: "https://missionhunter.pro",
+    screenshot: "/portfolio-screenshots/mission-hunter.svg",
+    screenshotAlt: "Preview card for Mission Hunter",
     period: "Approximately 3 months",
     category: "Location-Based NFT Marketing",
     type: "Web3",
@@ -208,6 +259,8 @@ const projects = [
   {
     name: "HUB Membership",
     website: "https://hubmembership.info",
+    screenshot: "/portfolio-screenshots/hub-membership.svg",
+    screenshotAlt: "Preview card for HUB Membership",
     period: "Approximately 3 months",
     category: "Crypto Payment Platform",
     type: "FinTech",
@@ -313,6 +366,14 @@ const requiredSolutions = [
   "Custom Development",
 ];
 
+const diligenceRows = [
+  ["Payment rails", "Ready", "API + merchant workflow", "Verified"],
+  ["Commerce engine", "Ready", "Catalog, cart, order stack", "Verified"],
+  ["Custom functions", "Scoped", "Two-week target window", "In review"],
+  ["USDT settlement", "Available", "Project payment only", "Controlled"],
+  ["Compliance posture", "Jurisdictional", "Reviewed before launch", "Required"],
+];
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -345,17 +406,19 @@ const softwareSchema = {
 };
 
 function SectionHeading({
-  eyebrow,
+  kicker,
   title,
   body,
+  align = "center",
 }: {
-  eyebrow: string;
+  kicker: string;
   title: string;
   body?: string;
+  align?: "left" | "center";
 }) {
   return (
-    <div className="section-heading reveal">
-      <span>{eyebrow}</span>
+    <div className={`section-heading ${align === "left" ? "align-left" : ""}`}>
+      <span>{kicker}</span>
       <h2>{title}</h2>
       {body ? <p>{body}</p> : null}
     </div>
@@ -373,8 +436,8 @@ function FeatureList({ items }: { items: string[] }) {
 }
 
 export default function Home() {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>("All");
+  const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const filteredProjects = useMemo(() => {
@@ -388,7 +451,7 @@ export default function Home() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const nextErrors: Record<string, string> = {};
     const requiredFields = [
       "name",
@@ -401,17 +464,18 @@ export default function Home() {
 
     requiredFields.forEach((field) => {
       if (!String(formData.get(field) ?? "").trim()) {
-        nextErrors[field] = "Required";
+        nextErrors[field] = `Please enter ${field === "requiredSolution" ? "a required solution" : field}.`;
       }
     });
 
     const email = String(formData.get("email") ?? "");
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      nextErrors.email = "Enter a valid email";
+      nextErrors.email = "Email needs a valid format, for example name@company.com.";
     }
 
     if (formData.get("amountAcknowledgement") !== "on") {
-      nextErrors.amountAcknowledgement = "Please confirm before sending";
+      nextErrors.amountAcknowledgement =
+        "Please confirm that final amounts are set by the official agreement or invoice.";
     }
 
     setErrors(nextErrors);
@@ -424,7 +488,7 @@ export default function Home() {
     window.setTimeout(() => {
       setStatus("success");
       form.reset();
-    }, 800);
+    }, 850);
   }
 
   return (
@@ -435,6 +499,9 @@ export default function Home() {
           __html: JSON.stringify([organizationSchema, softwareSchema]),
         }}
       />
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <div className="site-shell">
         <header className="nav-wrap">
           <a className="brand" href="#home" aria-label="NanoCapital home">
@@ -453,7 +520,7 @@ export default function Home() {
               <button type="button" aria-pressed="true">
                 EN
               </button>
-              <span aria-hidden="true">|</span>
+              <span aria-hidden="true">/</span>
               <button type="button" aria-pressed="false">
                 KR
               </button>
@@ -467,20 +534,20 @@ export default function Home() {
           </div>
         </header>
 
-        <main>
-          <section className="hero section-dark" id="home">
-            <div className="hero-content reveal">
-              <p className="eyebrow">Enterprise FinTech and commerce systems</p>
+        <main id="main-content">
+          <section className="hero" id="home">
+            <div className="hero-copy">
+              <p className="kicker">Operating system for payment and commerce diligence</p>
               <h1>
                 Payment and Commerce Solutions,
                 <span>Built for Your Business</span>
               </h1>
               <p className="lead">
                 Launch your payment platform and online shopping ecosystem with
-                NanoCapital's proven technology, customizable modules, and
+                NanoCapital&apos;s proven technology, customizable modules, and
                 experienced development team.
               </p>
-              <p>
+              <p className="hero-support">
                 From payment processing and shopping mall infrastructure to AI
                 and blockchain integration, we help businesses move from concept
                 to production.
@@ -500,60 +567,69 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-visual reveal" aria-label="NanoCapital platform visual">
-              <div className="dashboard-card payment-card">
-                <div className="card-topline">
-                  <span>Payment Dashboard</span>
-                  <strong>Live</strong>
+            <div className="terminal-panel" aria-label="NanoCapital diligence terminal">
+              <div className="terminal-topline">
+                <span>Diligence Terminal</span>
+                <strong>All systems operational</strong>
+              </div>
+              <div className="terminal-metrics">
+                <div>
+                  <span>Pipeline value</span>
+                  <strong>KRW 284.7M</strong>
                 </div>
-                <div className="metric-row">
-                  <div>
-                    <span>Processed</span>
-                    <strong>KRW 284.7M</strong>
+                <div>
+                  <span>Verification rate</span>
+                  <strong>99.2%</strong>
+                </div>
+              </div>
+              <div className="terminal-grid" role="table" aria-label="Solution readiness">
+                <div role="row" className="terminal-row terminal-head">
+                  <span role="columnheader">Workstream</span>
+                  <span role="columnheader">Status</span>
+                  <span role="columnheader">Evidence</span>
+                  <span role="columnheader">Signal</span>
+                </div>
+                {diligenceRows.map(([workstream, rowStatus, evidence, signal]) => (
+                  <div role="row" className="terminal-row" key={workstream}>
+                    <span role="cell">{workstream}</span>
+                    <span role="cell">{rowStatus}</span>
+                    <span role="cell">{evidence}</span>
+                    <strong role="cell">{signal}</strong>
                   </div>
-                  <div>
-                    <span>Success rate</span>
-                    <strong>99.2%</strong>
-                  </div>
-                </div>
-                <div className="chart-bars" aria-hidden="true">
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                </div>
+                ))}
               </div>
-              <div className="dashboard-card mall-card">
-                <div className="card-topline">
-                  <span>Shopping Mall</span>
-                  <strong>API</strong>
+              <div className="terminal-footer">
+                <span>API integration flow</span>
+                <div className="flow-bars" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                  <i />
                 </div>
-                <div className="store-grid" aria-hidden="true">
-                  <span />
-                  <span />
-                  <span />
-                  <span />
+                <strong>Final amount confirmed at payment</strong>
+              </div>
+            </div>
+
+            <div className="metric-strip" aria-label="NanoCapital operating metrics">
+              {metrics.map(([value, label]) => (
+                <div key={label}>
+                  <strong>{value}</strong>
+                  <span>{label}</span>
                 </div>
-              </div>
-              <div className="dashboard-card wallet-card">
-                <span>Mobile Wallet</span>
-                <strong>USDT Payment Ready</strong>
-                <small>Final amount confirmed at payment</small>
-              </div>
-              <div className="flow-line" aria-hidden="true" />
+              ))}
             </div>
           </section>
 
-          <section className="section light-section" id="solutions">
+          <section className="section paper-section" id="solutions">
             <SectionHeading
-              eyebrow="Solution overview"
+              kicker="Solution overview"
               title="Two Core Solutions. One Flexible Ecosystem."
+              body="NanoCapital packages payment and commerce infrastructure as reusable operating capability, then adapts it around each client's workflow, settlement method, and market launch plan."
             />
             <div className="solution-grid">
-              <article className="solution-card reveal">
-                <span className="card-icon">Pay</span>
+              <article className="solution-card">
+                <span className="card-index">01</span>
                 <h3>NanoCapital Pay Solution</h3>
                 <p>
                   A customizable payment infrastructure designed for merchants,
@@ -561,8 +637,8 @@ export default function Home() {
                 </p>
                 <FeatureList items={payFeatures} />
               </article>
-              <article className="solution-card reveal">
-                <span className="card-icon">Mall</span>
+              <article className="solution-card dark-card">
+                <span className="card-index">02</span>
                 <h3>Shopping Mall Solution</h3>
                 <p>
                   A ready-to-customize e-commerce and shopping mall platform for
@@ -574,24 +650,25 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="section muted-section" id="how-it-works">
+          <section className="section split-section" id="how-it-works">
             <SectionHeading
-              eyebrow="Custom development"
+              align="left"
+              kicker="Custom development"
               title="Custom Functions Built Around Your Business"
-              body="NanoCapital can develop additional functionality based on the client's operational, payment, commerce, or platform requirements."
+              body="Additional functionality can be developed around operational, payment, commerce, or platform requirements."
             />
             <div className="process-grid">
               {processSteps.map((step, index) => (
-                <article className="process-card reveal" key={step.title}>
+                <article className="process-card" key={step.title}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>{step.title}</h3>
                   <p>{step.body}</p>
                 </article>
               ))}
             </div>
-            <div className="callout reveal">
-              <strong>Estimated Custom Function Development Period:</strong>
-              <span>Approximately 2 Weeks</span>
+            <div className="time-callout">
+              <span>Estimated Custom Function Development Period</span>
+              <strong>Approximately 2 Weeks</strong>
               <p>
                 The delivery schedule begins after the requirements, scope, and
                 payment have been confirmed. Major changes or additional
@@ -600,19 +677,19 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="section light-section" id="commercial-terms">
+          <section className="section paper-section" id="commercial-terms">
             <SectionHeading
-              eyebrow="Commercial terms"
+              kicker="Commercial terms"
               title="Transparent Commercial Structure"
               body="All USD and USDT amounts displayed on the website are estimates. The final payment amount will be confirmed using the agreed exchange rate when the invoice or payment request is issued."
             />
-            <div className="exchange-reference reveal">
+            <div className="exchange-reference">
               <span>Admin-editable exchange-rate reference</span>
               <strong>[Insert agreed exchange-rate source and timestamp]</strong>
             </div>
             <div className="terms-grid">
               {commercialTerms.map((term) => (
-                <article className="term-card reveal" key={term.label}>
+                <article className="term-card" key={term.label}>
                   <p>{term.label}</p>
                   <h3>{term.amount}</h3>
                   <strong>{term.usd}</strong>
@@ -633,7 +710,7 @@ export default function Home() {
                 </article>
               ))}
             </div>
-            <p className="compliance-note reveal">
+            <p className="compliance-note">
               USDT transfer is presented only as a project payment, development
               deposit, service retainer, or transaction settlement method. It is
               not described as an investment, and this website does not promise
@@ -641,47 +718,58 @@ export default function Home() {
             </p>
           </section>
 
-          <section className="section dark-band">
-            <SectionHeading
-              eyebrow="Project timeline"
-              title="From Agreement to Launch"
-            />
+          <section className="section dark-section">
+            <SectionHeading kicker="Project timeline" title="From Agreement to Launch" />
             <div className="timeline">
               {timeline.map(([day, item]) => (
-                <article className="timeline-item reveal" key={day}>
+                <article className="timeline-item" key={day}>
                   <span>{day}</span>
                   <p>{item}</p>
                 </article>
               ))}
             </div>
-            <p className="timeline-disclaimer reveal">
+            <p className="timeline-disclaimer">
               The two-week timeline applies to the agreed custom function scope.
               Additional integrations, external approvals, compliance reviews,
               or scope changes may affect delivery time.
             </p>
           </section>
 
-          <section className="section light-section" id="portfolio">
-            <SectionHeading
-              eyebrow="Development portfolio"
-              title="Proven Experience Across AI, FinTech, Enterprise, and Web3"
-              body="Our development experience covers blockchain infrastructure, artificial intelligence, decentralized finance, payment platforms, enterprise systems, NFT platforms, RWA, SocialFi, and prediction markets."
-            />
-            <div className="filter-row" aria-label="Portfolio filters">
-              {filters.map((filter) => (
-                <button
-                  className={filter === activeFilter ? "active" : ""}
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  type="button"
-                >
-                  {filter}
-                </button>
-              ))}
+          <section className="section paper-section" id="portfolio">
+            <div className="portfolio-head">
+              <SectionHeading
+                align="left"
+                kicker="Development portfolio"
+                title="Proven Experience Across AI, FinTech, Enterprise, and Web3"
+                body="Our development experience covers blockchain infrastructure, artificial intelligence, decentralized finance, payment platforms, enterprise systems, NFT platforms, RWA, SocialFi, and prediction markets."
+              />
+              <div className="filter-row" aria-label="Portfolio filters">
+                {filters.map((filter) => (
+                  <button
+                    className={filter === activeFilter ? "active" : ""}
+                    key={filter}
+                    onClick={() => setActiveFilter(filter)}
+                    type="button"
+                    aria-pressed={filter === activeFilter}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
             </div>
             <div className="portfolio-grid">
               {filteredProjects.map((project) => (
-                <article className="portfolio-card reveal" key={project.name}>
+                <article className="portfolio-card" key={project.name}>
+                  <div className="portfolio-shot">
+                    <Image
+                      alt={project.screenshotAlt}
+                      fill
+                      loading="lazy"
+                      sizes="(max-width: 760px) 100vw, (max-width: 1180px) 50vw, 33vw"
+                      src={project.screenshot}
+                      unoptimized
+                    />
+                  </div>
                   <span>{project.type}</span>
                   <h3>{project.name}</h3>
                   <dl>
@@ -706,28 +794,32 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="section muted-section" id="technology">
-            <SectionHeading eyebrow="Technology expertise" title="Technology Capabilities" />
+          <section className="section split-section" id="technology">
+            <SectionHeading
+              align="left"
+              kicker="Technology expertise"
+              title="Technology Capabilities"
+            />
             <div className="capability-grid">
               {capabilities.map(([title, body]) => (
-                <article className="capability-card reveal" key={title}>
+                <article className="capability-card" key={title}>
                   <h3>{title}</h3>
                   <p>{body}</p>
                 </article>
               ))}
             </div>
-            <div className="keyword-cloud reveal">
+            <div className="keyword-cloud" aria-label="Technical keywords">
               {keywords.map((keyword) => (
                 <span key={keyword}>{keyword}</span>
               ))}
             </div>
           </section>
 
-          <section className="section light-section">
-            <SectionHeading eyebrow="Why NanoCapital" title="Why Work With NanoCapital" />
+          <section className="section paper-section">
+            <SectionHeading kicker="Why NanoCapital" title="Why Work With NanoCapital" />
             <div className="trust-grid">
               {trustCards.map(([title, body]) => (
-                <article className="trust-card reveal" key={title}>
+                <article className="trust-card" key={title}>
                   <h3>{title}</h3>
                   <p>{body}</p>
                 </article>
@@ -735,31 +827,29 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="section dark-band">
+          <section className="section dark-section">
             <SectionHeading
-              eyebrow="Security and compliance"
+              kicker="Security and compliance"
               title="Built for Responsible Business Operations"
             />
             <div className="security-grid">
               {securityItems.map((item) => (
-                <span className="reveal" key={item}>
-                  {item}
-                </span>
+                <span key={item}>{item}</span>
               ))}
             </div>
-            <p className="timeline-disclaimer reveal">
+            <p className="timeline-disclaimer">
               NanoCapital provides technology and software solutions.
               Availability of payment, wallet, blockchain, token, or settlement
               functions may depend on the laws, licensing requirements, and
-              regulatory rules of the client's operating jurisdiction.
+              regulatory rules of the client&apos;s operating jurisdiction.
             </p>
           </section>
 
-          <section className="section light-section">
-            <SectionHeading eyebrow="FAQ" title="Common Questions" />
+          <section className="section paper-section">
+            <SectionHeading kicker="FAQ" title="Common Questions" />
             <div className="faq-list">
               {faqs.map(([question, answer]) => (
-                <details className="reveal" key={question}>
+                <details key={question}>
                   <summary>{question}</summary>
                   <p>{answer}</p>
                 </details>
@@ -768,8 +858,8 @@ export default function Home() {
           </section>
 
           <section className="section contact-section" id="contact">
-            <div className="contact-copy reveal">
-              <span className="eyebrow">Final CTA</span>
+            <div className="contact-copy">
+              <span className="kicker">Final CTA</span>
               <h2>Ready to Launch Your Payment and Commerce Platform?</h2>
               <p>
                 Tell us about your business model, required payment flow,
@@ -786,7 +876,7 @@ export default function Home() {
               </div>
             </div>
             <form
-              className="contact-form reveal"
+              className="contact-form"
               id="contact-form"
               onSubmit={handleSubmit}
               noValidate
@@ -794,13 +884,23 @@ export default function Home() {
               <div className="form-grid">
                 <label>
                   Name
-                  <input name="name" aria-invalid={Boolean(errors.name)} />
-                  {errors.name ? <small>{errors.name}</small> : null}
+                  <input
+                    name="name"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? "name-error" : undefined}
+                  />
+                  {errors.name ? <small id="name-error">{errors.name}</small> : null}
                 </label>
                 <label>
                   Company
-                  <input name="company" aria-invalid={Boolean(errors.company)} />
-                  {errors.company ? <small>{errors.company}</small> : null}
+                  <input
+                    name="company"
+                    aria-invalid={Boolean(errors.company)}
+                    aria-describedby={errors.company ? "company-error" : undefined}
+                  />
+                  {errors.company ? (
+                    <small id="company-error">{errors.company}</small>
+                  ) : null}
                 </label>
                 <label>
                   Email
@@ -808,8 +908,9 @@ export default function Home() {
                     name="email"
                     type="email"
                     aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? "email-error" : undefined}
                   />
-                  {errors.email ? <small>{errors.email}</small> : null}
+                  {errors.email ? <small id="email-error">{errors.email}</small> : null}
                 </label>
                 <label>
                   Phone or Messenger
@@ -817,8 +918,14 @@ export default function Home() {
                 </label>
                 <label>
                   Country
-                  <input name="country" aria-invalid={Boolean(errors.country)} />
-                  {errors.country ? <small>{errors.country}</small> : null}
+                  <input
+                    name="country"
+                    aria-invalid={Boolean(errors.country)}
+                    aria-describedby={errors.country ? "country-error" : undefined}
+                  />
+                  {errors.country ? (
+                    <small id="country-error">{errors.country}</small>
+                  ) : null}
                 </label>
                 <label>
                   Expected launch date
@@ -830,6 +937,9 @@ export default function Home() {
                 <select
                   name="requiredSolution"
                   aria-invalid={Boolean(errors.requiredSolution)}
+                  aria-describedby={
+                    errors.requiredSolution ? "required-solution-error" : undefined
+                  }
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -842,7 +952,9 @@ export default function Home() {
                   ))}
                 </select>
                 {errors.requiredSolution ? (
-                  <small>{errors.requiredSolution}</small>
+                  <small id="required-solution-error">
+                    {errors.requiredSolution}
+                  </small>
                 ) : null}
               </label>
               <label>
@@ -851,8 +963,13 @@ export default function Home() {
                   name="requirements"
                   rows={5}
                   aria-invalid={Boolean(errors.requirements)}
+                  aria-describedby={
+                    errors.requirements ? "requirements-error" : undefined
+                  }
                 />
-                {errors.requirements ? <small>{errors.requirements}</small> : null}
+                {errors.requirements ? (
+                  <small id="requirements-error">{errors.requirements}</small>
+                ) : null}
               </label>
               <label className="checkbox-label">
                 <input name="amountAcknowledgement" type="checkbox" />
@@ -866,12 +983,12 @@ export default function Home() {
                 <small className="form-error">{errors.amountAcknowledgement}</small>
               ) : null}
               <button className="btn primary large" disabled={status === "loading"} type="submit">
-                {status === "loading" ? "Sending..." : "Submit Project Request"}
+                {status === "loading" ? "Preparing request..." : "Send Project Request"}
               </button>
               {status === "success" ? (
                 <p className="success-message" role="status">
-                  Thank you. Your request has been prepared for NanoCapital's
-                  team.
+                  Request prepared. NanoCapital&apos;s team can now review the
+                  project scope and commercial context.
                 </p>
               ) : null}
             </form>

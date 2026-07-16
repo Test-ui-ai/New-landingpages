@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">SimplePayX ERP preview</title>
+  <desc id="desc">Institutional preview card for the SimplePayX ERP portfolio project.</desc>
+  <rect width="1440" height="900" fill="#f7f7f2"/>
+  <path d="M0 150h1440M0 300h1440M0 450h1440M0 600h1440M0 750h1440M150 0v900M300 0v900M450 0v900M600 0v900M750 0v900M900 0v900M1050 0v900M1200 0v900M1350 0v900" stroke="#050608" stroke-opacity=".07"/>
+  <rect x="120" y="108" width="1200" height="684" rx="18" fill="#ffffff" stroke="#d7d9de"/>
+  <rect x="120" y="108" width="1200" height="82" rx="18" fill="#050608"/>
+  <text x="176" y="160" fill="#f7f7f2" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4">ENTERPRISE SYSTEM</text>
+  <text x="176" y="322" fill="#101114" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="800">SimplePayX ERP</text>
+  <text x="176" y="398" fill="#60646f" font-family="Arial, Helvetica, sans-serif" font-size="32">ERP / intranet operating platform</text>
+  <rect x="176" y="502" width="268" height="130" rx="10" fill="#f3f4f6" stroke="#d7d9de"/>
+  <rect x="492" y="502" width="268" height="130" rx="10" fill="#f3f4f6" stroke="#d7d9de"/>
+  <rect x="808" y="502" width="268" height="130" rx="10" fill="#f3f4f6" stroke="#d7d9de"/>
+  <text x="214" y="580" fill="#050608" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">4 months</text>
+  <text x="530" y="580" fill="#050608" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">ERP</text>
+  <text x="846" y="580" fill="#050608" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">Intranet</text>
+</svg>

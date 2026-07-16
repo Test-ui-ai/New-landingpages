@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | NanoCapital",
   },
   description:
-    "NanoCapital builds payment platforms, shopping mall systems, custom software, AI integrations, and blockchain payment infrastructure for Korean and international companies.",
+    "NanoCapital builds payment platforms, shopping mall systems, custom software, AI integrations, and blockchain infrastructure for Korean and international companies.",
   keywords: [
     "NanoCapital",
     "Pay Solution",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NanoCapital | Payment and Commerce Solutions",
     description:
-      "Launch payment and commerce platforms with proven technology, transparent terms, and fast custom development.",
+      "Launch payment and commerce platforms with proven technology, transparent commercial terms, and fast custom development.",
     url: "https://nanocapital-payment-commerce.anantasuk.chatgpt.site",
     siteName: "NanoCapital",
     type: "website",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NanoCapital | Payment and Commerce Solutions",
     description:
-      "Premium payment, commerce, AI, and blockchain software development for enterprise teams.",
+      "Premium payment, commerce, AI, and blockchain software development for enterprise teams and business partners.",
   },
   icons: {
     icon: "/favicon.svg",
