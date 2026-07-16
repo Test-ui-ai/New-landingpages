@@ -561,8 +561,8 @@ export default function Home() {
 
             <div className="terminal-panel" aria-label="NanoCapital diligence terminal">
               <div className="terminal-topline">
-                <span>Diligence Terminal</span>
-                <strong>All systems operational</strong>
+                <span>Investor diligence console</span>
+                <strong>Operational proof</strong>
               </div>
               <div className="terminal-metrics">
                 <div>
@@ -616,8 +616,8 @@ export default function Home() {
           <section className="section paper-section" id="solutions">
             <SectionHeading
               kicker="Solution overview"
-              title="Two Core Solutions. One Flexible Ecosystem."
-              body="NanoCapital packages payment and commerce infrastructure as reusable operating capability, then adapts it around each client's workflow, settlement method, and market launch plan."
+              title="Core Payment and Commerce Infrastructure"
+              body="NanoCapital packages payment and shopping mall systems as reusable operating capability, then adapts them around workflow, settlement, and market launch needs."
             />
             <div className="solution-grid">
               <article className="solution-card">
@@ -646,8 +646,8 @@ export default function Home() {
             <SectionHeading
               align="left"
               kicker="Custom development"
-              title="Custom Functions Built Around Your Business"
-              body="Additional functionality can be developed around operational, payment, commerce, or platform requirements."
+              title="Custom Functions Without Rebuilding the Stack"
+              body="Additional functionality can be developed around payment, commerce, workflow, or platform requirements."
             />
             <div className="process-grid">
               {processSteps.map((step, index) => (
@@ -673,7 +673,7 @@ export default function Home() {
             <SectionHeading
               kicker="Commercial terms"
               title="Transparent Commercial Structure"
-              body="All USD and USDT amounts displayed on the website are estimates. The final payment amount will be confirmed using the agreed exchange rate when the invoice or payment request is issued."
+              body="USD and USDT figures are estimates. The final payment amount is confirmed using the agreed exchange rate when the invoice or payment request is issued."
             />
             <div className="exchange-reference">
               <span>Admin-editable exchange-rate reference</span>
@@ -711,7 +711,7 @@ export default function Home() {
           </section>
 
           <section className="section dark-section">
-            <SectionHeading kicker="Project timeline" title="From Agreement to Launch" />
+            <SectionHeading kicker="Project timeline" title="Agreement to Launch" />
             <div className="timeline">
               {timeline.map(([day, item]) => (
                 <article className="timeline-item" key={day}>
@@ -733,7 +733,7 @@ export default function Home() {
                 align="left"
                 kicker="Development portfolio"
                 title="Proven Experience Across AI, FinTech, Enterprise, and Web3"
-                body="Our development experience covers blockchain infrastructure, artificial intelligence, decentralized finance, payment platforms, enterprise systems, NFT platforms, RWA, SocialFi, and prediction markets."
+                body="Delivered work spans blockchain infrastructure, AI platforms, payment systems, enterprise software, RWA, SocialFi, NFT, and prediction markets."
               />
               <div className="filter-row" aria-label="Portfolio filters">
                 {filters.map((filter) => (
@@ -790,7 +790,7 @@ export default function Home() {
             <SectionHeading
               align="left"
               kicker="Technology expertise"
-              title="Technology Capabilities"
+              title="Technology Capabilities Behind the Build"
             />
             <div className="capability-grid">
               {capabilities.map(([title, body]) => (
@@ -808,7 +808,7 @@ export default function Home() {
           </section>
 
           <section className="section paper-section">
-            <SectionHeading kicker="Why NanoCapital" title="Why Work With NanoCapital" />
+            <SectionHeading kicker="Decision factors" title="Why Work With NanoCapital" />
             <div className="trust-grid">
               {trustCards.map(([title, body]) => (
                 <article className="trust-card" key={title}>
@@ -838,7 +838,7 @@ export default function Home() {
           </section>
 
           <section className="section paper-section">
-            <SectionHeading kicker="FAQ" title="Common Questions" />
+            <SectionHeading kicker="Investor questions" title="Common Questions" />
             <div className="faq-list">
               {faqs.map(([question, answer]) => (
                 <details key={question}>
@@ -851,7 +851,7 @@ export default function Home() {
 
           <section className="section contact-section" id="contact">
             <div className="contact-copy">
-              <span className="kicker">Final CTA</span>
+              <span className="kicker">Project intake</span>
               <h2>Ready to Launch Your Payment and Commerce Platform?</h2>
               <p>
                 Tell us about your business model, required payment flow,
