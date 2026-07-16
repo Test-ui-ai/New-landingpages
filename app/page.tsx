@@ -1050,6 +1050,9 @@ export default function Home() {
                 KR
               </button>
             </div>
+            <a className="btn secondary" href="#contact">
+              {t.navCta}
+            </a>
             <a className="btn primary" href="#contact">
               {t.navPrimary}
             </a>
