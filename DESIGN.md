@@ -10,9 +10,9 @@ colors:
   ink: "#101114"
   muted: "#60646f"
   line: "#d7d9de"
-  blue: "#1d64ff"
-  cyan: "#37e4d0"
-  success: "#1fbf9a"
+  blue: "#2457d6"
+  cyan: "#8bd8cf"
+  success: "#137b65"
   error: "#c5354f"
 typography:
   display:
