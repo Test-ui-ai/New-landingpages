@@ -29,16 +29,17 @@ test("server-renders the NanoCapital landing page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Payment and Commerce Solutions/i);
+  assert.match(html, /결제 및 커머스 솔루션/i);
   assert.match(html, /NanoCapital Pay Solution/i);
   assert.match(html, /Shopping Mall Solution/i);
-  assert.match(html, /Transparent Commercial Structure/i);
+  assert.match(html, /투명한 상업 구조/i);
   assert.match(html, /KRW 5,000,000/i);
-  assert.match(html, /\[Designated USDT Wallet\]/i);
-  assert.match(html, /Final amount confirmed at payment/i);
+  assert.doesNotMatch(html, /\[Designated USDT Wallet\]|\[Insert/i);
+  assert.match(html, /서명된 인보이스에서 확정되는 USDT 지갑/i);
+  assert.match(html, /결제 시 최종 금액 확정/i);
   assert.match(html, /VAISEN Mainnet/i);
   assert.match(html, /https:\/\/hubmembership\.info/i);
-  assert.match(html, /Built for Responsible Business Operations/i);
+  assert.match(html, /책임 있는 비즈니스 운영을 위한 설계/i);
   assert.match(html, /application\/ld\+json/i);
 });
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | NanoCapital",
   },
   description:
-    "NanoCapital builds payment platforms, shopping mall systems, custom software, AI integrations, and blockchain infrastructure for Korean and international companies.",
+    "NanoCapital builds Korean-first payment platforms, shopping mall systems, custom software, AI integrations, and blockchain infrastructure for companies that need clear commercial terms.",
   keywords: [
     "NanoCapital",
     "Pay Solution",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      en: "/",
-      ko: "/?lang=kr",
+      ko: "/",
+      en: "/?lang=en",
     },
   },
   openGraph: {
@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body>{children}</body>
     </html>
   );
