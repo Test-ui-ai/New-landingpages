@@ -7,7 +7,6 @@
 .vercel
 .wrangler
 .vinext
-build
 dev-logs
 dev-server*.log
 *.log
