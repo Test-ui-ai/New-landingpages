@@ -2,22 +2,23 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nanocapital-payment-commerce.anantasuk.chatgpt.site"),
+  metadataBase: new URL("https://new-landingpages-test-ui-ai-speednano.vercel.app"),
   title: {
-    default: "NanoCapital | Payment and Commerce Solutions",
-    template: "%s | NanoCapital",
+    default: "Nexus One | Korean Web3 Portfolio Investment Reference",
+    template: "%s | Nexus One",
   },
   description:
-    "NanoCapital builds Korean-first payment platforms, shopping mall systems, custom software, AI integrations, and blockchain infrastructure for companies that need clear commercial terms.",
+    "Nexus One is a new Korean corporation in formation for Web3 portfolio inheritance, Busan Blockchain Special Zone development, and Thailand blockchain platform operations.",
   keywords: [
-    "NanoCapital",
-    "Pay Solution",
-    "Shopping Mall Solution",
-    "USDT payment integration",
-    "custom software development",
-    "FinTech platform",
-    "blockchain infrastructure",
-    "enterprise commerce",
+    "Nexus One",
+    "Busan Blockchain Special Zone",
+    "Korean investment",
+    "Web3 portfolio",
+    "Logiconfire",
+    "RealSun",
+    "decentralized OTC platform",
+    "ILOVEKOREA.AI",
+    "Thailand blockchain platform",
   ],
   alternates: {
     canonical: "/",
@@ -27,18 +28,18 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "NanoCapital | Payment and Commerce Solutions",
+    title: "Nexus One | Korean Web3 Portfolio Investment Reference",
     description:
-      "Launch payment and commerce platforms with proven technology, transparent commercial terms, and fast custom development.",
-    url: "https://nanocapital-payment-commerce.anantasuk.chatgpt.site",
-    siteName: "NanoCapital",
+      "Organized diligence surface for Nexus One corporation formation, major Web3 portfolio references, and scheduled investment conditions.",
+    url: "https://new-landingpages-test-ui-ai-speednano.vercel.app",
+    siteName: "Nexus One",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NanoCapital | Payment and Commerce Solutions",
+    title: "Nexus One | Korean Web3 Portfolio Investment Reference",
     description:
-      "Premium payment, commerce, AI, and blockchain software development for enterprise teams and business partners.",
+      "Korean-first investor diligence page for Nexus One, Busan Blockchain Special Zone, and Web3 portfolio operations.",
   },
   icons: {
     icon: "/favicon.svg",

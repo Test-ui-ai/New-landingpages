@@ -23,23 +23,27 @@ async function render() {
   );
 }
 
-test("server-renders the NanoCapital landing page", async () => {
+test("server-renders the Nexus One investment reference page", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /결제 및 커머스 솔루션/i);
-  assert.match(html, /NanoCapital Pay Solution/i);
-  assert.match(html, /Shopping Mall Solution/i);
-  assert.match(html, /투명한 상업 구조/i);
-  assert.match(html, /KRW 5,000,000/i);
+  assert.match(html, /Nexus One/i);
+  assert.match(html, /Web3 포트폴리오 지주회사/i);
+  assert.match(html, /KRW 2,000,000,000/i);
+  assert.match(html, /15%/i);
+  assert.match(html, /RealSun Solar NFC Platform/i);
+  assert.match(html, /KRW 140,000,000/i);
+  assert.match(html, /Decentralized OTC Platform/i);
+  assert.match(html, /https:\/\/nft\.lart\.lol/i);
+  assert.match(html, /ILOVEKOREA\.AI/i);
+  assert.match(html, /KRW 3,000,000,000/i);
   assert.doesNotMatch(html, /\[Designated USDT Wallet\]|\[Insert/i);
-  assert.match(html, /서명된 인보이스에서 확정되는 USDT 지갑/i);
-  assert.match(html, /결제 시 최종 금액 확정/i);
+  assert.doesNotMatch(html, /promises returns|guaranteed returns/i);
   assert.match(html, /VAISEN Mainnet/i);
   assert.match(html, /https:\/\/hubmembership\.info/i);
-  assert.match(html, /책임 있는 비즈니스 운영을 위한 설계/i);
+  assert.match(html, /책임 있는 투자 설명 방식/i);
   assert.match(html, /application\/ld\+json/i);
 });
 
@@ -54,5 +58,5 @@ test("removes starter preview scaffolding from product files", async () => {
   assert.doesNotMatch(layout, /Starter Project|codex-preview|_sites-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(layout, /openGraph/);
-  assert.match(layout, /NanoCapital \| Payment and Commerce Solutions/);
+  assert.match(layout, /Nexus One \| Korean Web3 Portfolio Investment Reference/);
 });

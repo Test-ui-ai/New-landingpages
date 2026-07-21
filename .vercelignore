@@ -1,11 +1,16 @@
 .agents
 .codex
 .impeccable
+.env
+.env.*
 .git
 .vercel
 .wrangler
 .vinext
+build
 dev-logs
+dev-server*.log
+*.log
 dist
 node_modules
 outputs

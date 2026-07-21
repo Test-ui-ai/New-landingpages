@@ -20,121 +20,105 @@ type FilterValue = ProjectTag | "All";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
-  { en: "Solutions", ko: "솔루션", href: "#solutions" },
-  { en: "Terms", ko: "조건", href: "#commercial-terms" },
+  { en: "Structure", ko: "구조", href: "#solutions" },
+  { en: "Investment", ko: "투자 조건", href: "#commercial-terms" },
   { en: "Portfolio", ko: "포트폴리오", href: "#portfolio" },
   { en: "Contact", ko: "문의", href: "#contact" },
 ];
 
 const heroHighlights: Record<Locale, string[]> = {
-  en: ["Pay Solution", "Shopping Mall Solution", "Custom Development"],
-  ko: ["결제 솔루션", "쇼핑몰 솔루션", "맞춤 개발"],
+  en: ["Busan Blockchain Special Zone", "Thailand platform operation", "Web3 portfolio company"],
+  ko: ["부산 블록체인 특구", "태국 플랫폼 운영", "Web3 포트폴리오 법인"],
 };
 
 const metrics: Record<Locale, Array<[string, string]>> = {
   en: [
-    ["12", "Portfolio references listed"],
-    ["2", "Core solution tracks"],
-    ["14 days", "Target custom-function window"],
-    ["0", "Return or profit claims"],
+    ["KRW 2B", "Scheduled corporation round reference"],
+    ["15%", "Scheduled equity allocation"],
+    ["KRW 140M", "RealSun development-cost reference"],
+    ["Busan", "Incorporation in progress"],
   ],
   ko: [
-    ["12", "공개 포트폴리오 레퍼런스"],
-    ["2", "핵심 솔루션 트랙"],
-    ["14일", "맞춤 기능 목표 기간"],
-    ["0", "수익률 또는 투자수익 약속"],
+    ["KRW 20억", "예정 법인 투자 라운드"],
+    ["15%", "예정 지분 배정"],
+    ["KRW 1.4억", "RealSun 개발비 레퍼런스"],
+    ["부산", "법인 설립 진행 중"],
   ],
 };
 
 const payFeatures: Record<Locale, string[]> = {
   en: [
-    "Merchant payment processing",
-    "Customer payment interface",
-    "Transaction monitoring",
-    "Settlement and payment records",
-    "Admin dashboard",
-    "API integration",
-    "USDT payment support",
-    "User and merchant account management",
-    "Custom reporting",
-    "Role-based access control",
+    "New Korean corporation: Nexus One",
+    "Incorporation in progress in the Busan Blockchain Special Zone",
+    "Inherits the Web3 development portfolio of Logiconfire sole proprietorship",
+    "CEO Kim Dong-hyuk portfolio reference basis",
+    "Holding-company structure for Korea and Thailand platform operations",
+    "Investment conditions organized for Korean investor diligence",
   ],
   ko: [
-    "가맹점 결제 처리",
-    "고객 결제 화면",
-    "거래 모니터링",
-    "정산 및 결제 기록",
-    "관리자 대시보드",
-    "API 연동",
-    "USDT 결제 지원",
-    "사용자 및 가맹점 계정 관리",
-    "맞춤 리포트",
-    "역할 기반 접근 제어",
+    "신규 한국 법인: Nexus One",
+    "부산 블록체인 특구 내 법인 설립 진행 중",
+    "Logiconfire 개인사업자 Web3 개발 포트폴리오 승계",
+    "김동혁 대표 포트폴리오 레퍼런스 기반",
+    "한국 개발 및 태국 블록체인 플랫폼 운영을 위한 지주회사 구조",
+    "한국 투자자 실사를 위한 투자 조건 정리",
   ],
 };
 
 const mallFeatures: Record<Locale, string[]> = {
   en: [
-    "Product and category management",
-    "Shopping cart and checkout",
-    "Customer account system",
-    "Order management",
-    "Merchant or vendor management",
-    "Payment integration",
-    "Promotion and coupon management",
-    "Sales analytics",
-    "Mobile-responsive storefront",
-    "Custom modules and workflows",
+    "Solar NFC platform and wallet references",
+    "Proprietary decentralized OTC platform",
+    "Lart NFC and staking platform",
+    "Real-time translation community app for Korea commerce",
+    "Prepaid card business registration and operation in progress",
+    "Moden Members development project tracked separately",
   ],
   ko: [
-    "상품 및 카테고리 관리",
-    "장바구니와 결제",
-    "고객 계정 시스템",
-    "주문 관리",
-    "가맹점 또는 판매자 관리",
-    "결제 연동",
-    "프로모션 및 쿠폰 관리",
-    "매출 분석",
-    "모바일 대응 스토어프론트",
-    "맞춤 모듈과 업무 흐름",
+    "태양광 NFC 플랫폼 및 지갑 레퍼런스",
+    "자체 개발 탈중앙화 OTC 플랫폼",
+    "Lart NFC 및 스테이킹 플랫폼",
+    "한국 상권 외국인 커뮤니케이션 실시간 번역 앱",
+    "선불카드 사업자 등록 및 운영 진행 중",
+    "Moden Members 개발 프로젝트 별도 관리",
   ],
 };
 
 const processSteps: Record<Locale, Array<{ title: string; body: string }>> = {
   en: [
     {
-      title: "Requirement Confirmation",
-      body: "Confirm business requirements, workflows, API needs, and system scope.",
+      title: "Portfolio Inheritance",
+      body: "Organize the Web3 development portfolio of the existing Logiconfire sole proprietorship for transfer into Nexus One.",
     },
     {
-      title: "Commercial Confirmation",
-      body: "Confirm the signed invoice, USDT wallet, exchange-rate source, and project start conditions.",
+      title: "Busan Incorporation",
+      body: "Proceed with Korean corporation formation inside the Busan Blockchain Special Zone.",
     },
     {
-      title: "Development Starts",
-      body: "Development begins after payment confirmation and proceeds alongside the Pay Solution and Shopping Mall Solution setup.",
+      title: "Round Documentation",
+      body: "Prepare investment conditions, equity allocation references, and diligence materials for Korean investors.",
     },
     {
-      title: "Delivery and Testing",
-      body: "The custom function is developed, integrated, tested, and prepared for delivery within approximately two weeks.",
+      title: "Operating Rollout",
+      body: "Coordinate Korea development-zone activity with Thailand blockchain platform operations and ongoing project execution.",
     },
   ],
   ko: [
     {
-      title: "요구사항 확정",
-      body: "비즈니스 요구사항, 업무 흐름, API 필요사항, 시스템 범위를 확인합니다.",
+      title: "포트폴리오 승계",
+      body: "기존 Logiconfire 개인사업자의 Web3 개발 포트폴리오를 Nexus One으로 승계하기 위해 정리합니다.",
     },
     {
-      title: "상업 조건 확정",
-      body: "서명된 인보이스, USDT 지갑, 환율 기준, 프로젝트 시작 조건을 확인합니다.",
+      title: "부산 법인 설립",
+      body: "부산 블록체인 특구 내 신규 한국 법인 설립을 진행합니다.",
     },
     {
-      title: "개발 착수",
-      body: "결제 확인 후 Pay Solution 및 Shopping Mall Solution 설정과 함께 개발을 시작합니다.",
+      title: "투자 라운드 문서화",
+      body: "한국 투자자 실사를 위한 투자 조건, 지분 배정 기준, 포트폴리오 자료를 정리합니다.",
     },
     {
-      title: "납품 및 테스트",
-      body: "합의된 맞춤 기능을 개발, 연동, 테스트한 뒤 약 2주 목표로 납품 준비를 진행합니다.",
+      title: "운영 전개",
+      body: "한국 특구 개발 활동과 태국 블록체인 플랫폼 운영 및 진행 프로젝트를 함께 관리합니다.",
     },
   ],
 };
@@ -152,80 +136,80 @@ const commercialTerms: Record<
 > = {
   en: [
     {
-      label: "Custom Function Development Deposit",
-      amount: "KRW 5,000,000",
-      usd: "Approximately USD 3,340",
-      payment: "USDT wallet confirmed in the signed invoice",
+      label: "Nexus One corporation round",
+      amount: "KRW 2,000,000,000",
+      usd: "15% scheduled equity allocation",
+      payment: "Subject to incorporation, diligence, and signed subscription agreement",
       details:
-        "The final USDT amount is calculated using the exchange-rate source and reference time stated in the invoice or project agreement.",
+        "Investment condition reference for the new Korean corporation inheriting the Logiconfire Web3 development portfolio.",
       timing:
-        "The Pay Solution, Shopping Mall Solution, and approved custom development work may proceed concurrently after payment and project confirmation.",
+        "Scheduled while incorporation proceeds in the Busan Blockchain Special Zone.",
     },
     {
-      label: "Monthly Service Retainer",
-      amount: "KRW 1,200,000 per month",
-      usd: "Approximately USD 802 per month",
-      payment: "USDT wallet confirmed in the signed invoice",
+      label: "Prepaid card business",
+      amount: "KRW 3,000,000,000",
+      usd: "15% expected equity allocation",
+      payment: "Registration and operation in progress",
       details:
-        "Monthly payments begin from the service commencement date stated in the agreement.",
-      timing: "Service commencement date is confirmed in the signed agreement.",
+        "Management describes the investment as in progress and close to confirmation; final allocation remains subject to signed documentation.",
+      timing: "Business registration, operational preparation, and investment documentation are moving in parallel.",
     },
     {
-      label: "Transaction Fee",
-      amount: "3%",
-      usd: "Final amount confirmed at payment",
-      payment: "Applied to eligible transactions",
+      label: "Moden Members project",
+      amount: "KRW 100,000,000",
+      usd: "Separate equity allocation",
+      payment: "Project development condition",
       details:
-        "A 3% service fee is applied to eligible transactions processed through the solution, subject to the final agreement, transaction type, settlement method, and applicable taxes.",
-      timing: "Final calculation basis will be defined in the agreement.",
+        "Project development amount is tracked separately from the Nexus One corporation round and prepaid card business investment.",
+      timing: "Equity allocation and commercial terms to be confirmed in the project agreement.",
     },
   ],
   ko: [
     {
-      label: "맞춤 기능 개발 예치금",
-      amount: "KRW 5,000,000",
-      usd: "약 USD 3,340",
-      payment: "서명된 인보이스에서 확정되는 USDT 지갑",
+      label: "Nexus One 법인 투자 라운드",
+      amount: "KRW 2,000,000,000",
+      usd: "15% 지분 배정 예정",
+      payment: "법인 설립, 실사, 최종 투자계약 체결을 전제로 함",
       details:
-        "최종 USDT 금액은 인보이스 또는 프로젝트 계약서에 명시된 환율 기준과 기준 시점을 사용해 계산됩니다.",
+        "Logiconfire Web3 개발 포트폴리오를 승계하는 신규 한국 법인을 위한 투자 조건 레퍼런스입니다.",
       timing:
-        "결제 및 프로젝트 확인 후 Pay Solution, Shopping Mall Solution, 승인된 맞춤 개발을 병행할 수 있습니다.",
+        "부산 블록체인 특구 내 법인 설립 진행과 함께 예정되어 있습니다.",
     },
     {
-      label: "월 서비스 리테이너",
-      amount: "KRW 1,200,000 / 월",
-      usd: "월 약 USD 802",
-      payment: "서명된 인보이스에서 확정되는 USDT 지갑",
+      label: "선불카드 사업",
+      amount: "KRW 3,000,000,000",
+      usd: "15% 지분 배정 예상",
+      payment: "사업자 등록 및 운영 진행 중",
       details:
-        "월 결제는 계약서에 명시된 서비스 시작일을 기준으로 시작됩니다.",
-      timing: "서비스 시작일은 서명된 계약서에서 확정됩니다.",
+        "투자는 진행 중이며 거의 확정 단계로 설명되지만, 최종 배정은 서명된 문서에 따릅니다.",
+      timing: "사업자 등록, 운영 준비, 투자 문서화가 병행되고 있습니다.",
     },
     {
-      label: "거래 수수료",
-      amount: "3%",
-      usd: "결제 시 최종 금액 확정",
-      payment: "대상 거래에 적용",
+      label: "Moden Members 프로젝트",
+      amount: "KRW 100,000,000",
+      usd: "지분 별도 배정",
+      payment: "프로젝트 개발 조건",
       details:
-        "3% 서비스 수수료는 솔루션을 통해 처리되는 대상 거래에 적용되며, 최종 계약, 거래 유형, 정산 방식, 적용 세금에 따릅니다.",
-      timing: "최종 계산 기준은 계약서에서 정의됩니다.",
+        "프로젝트 개발 금액은 Nexus One 법인 라운드 및 선불카드 사업 투자와 별도로 관리됩니다.",
+      timing: "지분 배정 및 상업 조건은 프로젝트 계약서에서 확정됩니다.",
     },
   ],
 };
 
 const timeline: Record<Locale, Array<[string, string]>> = {
   en: [
-    ["Day 1-2", "Project kickoff and requirement confirmation"],
-    ["Day 2-4", "System configuration and technical planning"],
-    ["Day 3-12", "Custom function development and platform integration"],
-    ["Day 10-13", "Testing, revisions, and client review"],
-    ["Day 14", "Target delivery of the approved custom function"],
+    ["Now", "Nexus One incorporation in progress in the Busan Blockchain Special Zone"],
+    ["Round", "15% of KRW 2,000,000,000 scheduled for the new Korean corporation"],
+    ["Portfolio", "RealSun, decentralized OTC, Lart NFC staking, and ILOVEKOREA.AI organized as major references"],
+    ["Operations", "Korea special-zone development and Thailand blockchain platform operation structured under the holding company"],
+    ["Review", "Thai BOI corporation cost and approval constraints documented for investor diligence"],
   ],
   ko: [
-    ["1-2일차", "프로젝트 킥오프 및 요구사항 확정"],
-    ["2-4일차", "시스템 설정 및 기술 계획"],
-    ["3-12일차", "맞춤 기능 개발 및 플랫폼 연동"],
-    ["10-13일차", "테스트, 수정, 고객 검토"],
-    ["14일차", "승인된 맞춤 기능 목표 납품"],
+    ["현재", "Nexus One 법인 설립이 부산 블록체인 특구에서 진행 중"],
+    ["라운드", "신규 한국 법인 기준 KRW 2,000,000,000의 15% 배정 예정"],
+    ["포트폴리오", "RealSun, 탈중앙화 OTC, Lart NFC 스테이킹, ILOVEKOREA.AI를 주요 레퍼런스로 정리"],
+    ["운영", "한국 특구 개발과 태국 블록체인 플랫폼 운영을 지주회사 구조로 연결"],
+    ["검토", "태국 BOI 법인 비용 및 승인 제약을 투자자 실사 자료에 반영"],
   ],
 };
 
@@ -240,14 +224,78 @@ const filters: Array<{ value: FilterValue; en: string; ko: string }> = [
 
 const projects: Array<{
   name: string;
-  website: string;
+  website?: string;
   screenshot: string;
   screenshotAlt: string;
   period: string;
   category: string;
   type: string;
+  reference?: string;
   tags: ProjectTag[];
 }> = [
+  {
+    name: "RealSun Solar NFC Platform",
+    website: "https://realsun.info",
+    screenshot: "/portfolio-screenshots/realsun-platform.png",
+    screenshotAlt: "Screenshot of the RealSun Solar NFC Platform website",
+    period: "Approximately 6 months",
+    category: "Solar NFC Platform",
+    type: "Major Portfolio",
+    reference: "KRW 140,000,000 development-cost reference",
+    tags: ["RWA", "Web3"],
+  },
+  {
+    name: "Decentralized OTC Platform",
+    screenshot: "/portfolio-screenshots/decentralized-otc.svg",
+    screenshotAlt: "Preview card for the decentralized OTC platform",
+    period: "Proprietary platform",
+    category: "Decentralized OTC Platform",
+    type: "Major Portfolio",
+    reference: "Private platform reference",
+    tags: ["DeFi", "Web3"],
+  },
+  {
+    name: "Lart NFC and Staking Platform",
+    website: "https://nft.lart.lol",
+    screenshot: "/portfolio-screenshots/lost-tesla-art-nft.svg",
+    screenshotAlt: "Preview card for Lart NFC and Staking Platform",
+    period: "Approximately 2 months",
+    category: "NFC + Staking Platform",
+    type: "Major Portfolio",
+    reference: "Proprietary platform reference",
+    tags: ["NFT", "Web3"],
+  },
+  {
+    name: "ILOVEKOREA.AI",
+    website: "https://ilovekorea.ai",
+    screenshot: "/portfolio-screenshots/ilovekorea-ai.png",
+    screenshotAlt: "Screenshot of the ILOVEKOREA.AI website",
+    period: "Approximately 4 months",
+    category: "Real-Time Translation Community App",
+    type: "Major Portfolio",
+    reference: "Foreigner-to-merchant communication app",
+    tags: ["AI"],
+  },
+  {
+    name: "Prepaid Card Business",
+    screenshot: "/portfolio-screenshots/hub-membership.svg",
+    screenshotAlt: "Preview card for the prepaid card business",
+    period: "Registration and operation in progress",
+    category: "Prepaid Card Operation",
+    type: "Ongoing Project",
+    reference: "KRW 3,000,000,000 investment in progress",
+    tags: ["FinTech"],
+  },
+  {
+    name: "Moden Members",
+    screenshot: "/portfolio-screenshots/simplepayx-erp.svg",
+    screenshotAlt: "Preview card for the Moden Members project",
+    period: "Development in progress",
+    category: "Membership Platform",
+    type: "Ongoing Project",
+    reference: "KRW 100,000,000 development project",
+    tags: ["Enterprise", "FinTech"],
+  },
   {
     name: "VAISEN Mainnet",
     website: "https://vaisen.io",
@@ -257,26 +305,6 @@ const projects: Array<{
     category: "EVM Blockchain Mainnet",
     type: "Blockchain Infrastructure",
     tags: ["Blockchain"],
-  },
-  {
-    name: "ILOVEKOREA.AI",
-    website: "https://ilovekorea.ai",
-    screenshot: "/portfolio-screenshots/ilovekorea-ai.png",
-    screenshotAlt: "Screenshot of the ILOVEKOREA.AI website",
-    period: "Approximately 4 months",
-    category: "AI Community Platform",
-    type: "AI + Web Platform",
-    tags: ["AI"],
-  },
-  {
-    name: "Lost Tesla Art NFT",
-    website: "https://nft.lar.llol",
-    screenshot: "/portfolio-screenshots/lost-tesla-art-nft.svg",
-    screenshotAlt: "Preview card for Lost Tesla Art NFT",
-    period: "Approximately 2 months",
-    category: "NFT Marketplace",
-    type: "Web3",
-    tags: ["NFT", "Web3"],
   },
   {
     name: "BUYZONE Protocol",
@@ -372,211 +400,216 @@ const projects: Array<{
 
 const capabilities: Record<Locale, Array<[string, string]>> = {
   en: [
-    ["Blockchain Infrastructure", "VAISEN Mainnet"],
-    ["AI Platforms", "ILOVEKOREA.AI and AutoBlog"],
-    ["DeFi and DEX", "BUYZONE Protocol"],
-    ["RWA Platforms", "RealSun and SMFI"],
-    ["NFT Platforms", "Lost Tesla Art NFT and Mission Hunter"],
-    ["Prediction Markets", "Oracle Predict"],
-    ["Enterprise Solutions", "SimplePayX ERP"],
-    ["FinTech and Payments", "HUB Membership and NanoCapital Pay Solution"],
+    ["Holding Company Structure", "Nexus One corporation formation in Busan"],
+    ["Solar NFC and RWA", "RealSun platform and wallet references"],
+    ["OTC and DeFi", "Proprietary OTC platform and BUYZONE Protocol"],
+    ["NFC and Staking", "Lart NFC and staking platform"],
+    ["AI Translation Commerce", "ILOVEKOREA.AI and AutoBlog"],
+    ["FinTech Operations", "Prepaid card business and HUB Membership"],
+    ["Enterprise Systems", "SimplePayX ERP and Moden Members"],
+    ["Blockchain Infrastructure", "VAISEN Mainnet and wallet architecture"],
   ],
   ko: [
-    ["블록체인 인프라", "VAISEN Mainnet"],
-    ["AI 플랫폼", "ILOVEKOREA.AI 및 AutoBlog"],
-    ["DeFi 및 DEX", "BUYZONE Protocol"],
-    ["RWA 플랫폼", "RealSun 및 SMFI"],
-    ["NFT 플랫폼", "Lost Tesla Art NFT 및 Mission Hunter"],
-    ["예측 시장", "Oracle Predict"],
-    ["엔터프라이즈 솔루션", "SimplePayX ERP"],
-    ["핀테크 및 결제", "HUB Membership 및 NanoCapital Pay Solution"],
+    ["지주회사 구조", "부산 내 Nexus One 법인 설립"],
+    ["태양광 NFC 및 RWA", "RealSun 플랫폼 및 지갑 레퍼런스"],
+    ["OTC 및 DeFi", "자체 OTC 플랫폼과 BUYZONE Protocol"],
+    ["NFC 및 스테이킹", "Lart NFC 및 스테이킹 플랫폼"],
+    ["AI 번역 커머스", "ILOVEKOREA.AI 및 AutoBlog"],
+    ["핀테크 운영", "선불카드 사업과 HUB Membership"],
+    ["엔터프라이즈 시스템", "SimplePayX ERP 및 Moden Members"],
+    ["블록체인 인프라", "VAISEN Mainnet 및 지갑 아키텍처"],
   ],
 };
 
 const keywords: Record<Locale, string[]> = {
   en: [
-    "Payment APIs",
-    "Merchant dashboards",
-    "E-commerce systems",
+    "Busan Blockchain Special Zone",
+    "Portfolio inheritance",
+    "Investment diligence",
+    "Equity allocation",
+    "Prepaid card operations",
+    "NFC platforms",
+    "OTC infrastructure",
+    "Real-time translation",
     "Blockchain wallets",
     "Smart contracts",
     "EVM infrastructure",
-    "AI integration",
-    "ERP systems",
-    "Admin dashboards",
-    "API development",
-    "Database architecture",
-    "Cloud deployment",
-    "Security testing",
-    "Responsive web applications",
+    "Thailand platform operations",
   ],
   ko: [
-    "결제 API",
-    "가맹점 대시보드",
-    "이커머스 시스템",
+    "부산 블록체인 특구",
+    "포트폴리오 승계",
+    "투자 실사",
+    "지분 배정",
+    "선불카드 운영",
+    "NFC 플랫폼",
+    "OTC 인프라",
+    "실시간 번역",
     "블록체인 지갑",
     "스마트 컨트랙트",
     "EVM 인프라",
-    "AI 연동",
-    "ERP 시스템",
-    "관리자 대시보드",
-    "API 개발",
-    "데이터베이스 설계",
-    "클라우드 배포",
-    "보안 테스트",
-    "반응형 웹 애플리케이션",
+    "태국 플랫폼 운영",
   ],
 };
 
 const trustCards: Record<Locale, Array<[string, string]>> = {
   en: [
     [
-      "Visible Portfolio",
-      "Reference projects are listed with websites, categories, and delivery periods so buyers can review the work directly.",
+      "Organized Portfolio",
+      "Major references, ongoing projects, websites, and management-provided value references are separated for faster diligence.",
     ],
     [
-      "Faster Market Entry",
-      "Use an existing Pay Solution and Shopping Mall Solution instead of building every component from the beginning.",
+      "Clear Corporation Basis",
+      "Nexus One is presented as the new Korean corporation inheriting the Logiconfire Web3 development portfolio.",
     ],
     [
-      "Flexible Customization",
-      "Add custom functions based on business requirements, internal processes, payment flows, and customer journeys.",
+      "Korea and Thailand Operating Logic",
+      "The company structure connects Busan Blockchain Special Zone development with Thailand blockchain platform operation.",
     ],
     [
-      "Transparent Project Structure",
-      "Clear development scope, payment milestones, delivery timeline, monthly service terms, and transaction fees.",
+      "Measured Investment Language",
+      "Round values and equity allocations are stated as scheduled, expected, or subject to signed agreements where appropriate.",
     ],
   ],
   ko: [
     [
-      "확인 가능한 포트폴리오",
-      "웹사이트, 카테고리, 개발 기간을 함께 제시해 구매자가 직접 레퍼런스를 검토할 수 있습니다.",
+      "정리된 포트폴리오",
+      "주요 레퍼런스, 진행 프로젝트, 웹사이트, 경영진 제공 금액 기준을 분리해 실사 속도를 높입니다.",
     ],
     [
-      "빠른 시장 진입",
-      "모든 구성요소를 처음부터 만들지 않고 기존 Pay Solution과 Shopping Mall Solution을 기반으로 시작합니다.",
+      "명확한 법인 기준",
+      "Nexus One은 Logiconfire Web3 개발 포트폴리오를 승계하는 신규 한국 법인으로 제시됩니다.",
     ],
     [
-      "유연한 맞춤화",
-      "비즈니스 요구사항, 내부 프로세스, 결제 흐름, 고객 여정에 맞춰 기능을 추가합니다.",
+      "한국과 태국 운영 논리",
+      "부산 블록체인 특구 개발과 태국 블록체인 플랫폼 운영을 하나의 지주회사 구조로 연결합니다.",
     ],
     [
-      "투명한 프로젝트 구조",
-      "개발 범위, 결제 단계, 납품 일정, 월 서비스 조건, 거래 수수료를 명확히 정리합니다.",
+      "신중한 투자 표현",
+      "라운드 금액과 지분 배정은 예정, 예상 또는 최종 계약 조건부로 구분해 표기합니다.",
     ],
   ],
 };
 
 const securityItems: Record<Locale, string[]> = {
   en: [
-    "Wallet address verification before payment",
-    "Payment confirmation records",
-    "Role-based administrator access",
-    "Transaction history",
-    "API authentication",
-    "Data protection",
-    "System activity logging",
-    "Testing before production deployment",
-    "Client approval before launch",
-    "Compliance review based on the operating jurisdiction",
+    "Corporation formation status disclosed as in progress",
+    "Investment terms subject to final signed agreements",
+    "No return, interest, or appreciation promise",
+    "Portfolio values treated as management-provided references",
+    "BOI corporation costs and approval constraints disclosed",
+    "Thailand operation structure requires jurisdictional review",
+    "Equity allocations described as scheduled or expected",
+    "Project-specific allocation separated from corporation round",
   ],
   ko: [
-    "결제 전 지갑 주소 확인",
-    "결제 확인 기록",
-    "역할 기반 관리자 접근",
-    "거래 이력",
-    "API 인증",
-    "데이터 보호",
-    "시스템 활동 로그",
-    "프로덕션 배포 전 테스트",
-    "출시 전 고객 승인",
-    "운영 관할권 기준의 컴플라이언스 검토",
+    "법인 설립 상태를 진행 중으로 표기",
+    "투자 조건은 최종 서명 계약을 전제로 함",
+    "수익, 이자, 가치 상승 약속 없음",
+    "포트폴리오 금액은 경영진 제공 레퍼런스로 취급",
+    "BOI 법인 비용 및 승인 제약 공개",
+    "태국 운영 구조는 관할권 검토 필요",
+    "지분 배정은 예정 또는 예상으로 구분",
+    "프로젝트별 지분 배정은 법인 라운드와 분리",
   ],
 };
 
 const faqs: Record<Locale, Array<[string, string]>> = {
   en: [
     [
-      "What is included in the Pay Solution?",
-      "The Pay Solution includes the core payment interface, transaction management, administration tools, reporting, and agreed integration functions. The final scope will be listed in the project agreement.",
+      "What is Nexus One?",
+      "Nexus One is presented as a new Korean corporation in formation, intended to inherit the Web3 development portfolio of the existing Logiconfire sole proprietorship led by CEO Kim Dong-hyuk.",
     ],
     [
-      "What is included in the Shopping Mall Solution?",
-      "The solution can include product management, customer accounts, cart, checkout, orders, promotions, merchant functions, payment integration, and an administration dashboard.",
+      "What is the proposed corporation round?",
+      "The current reference is 15% of KRW 2,000,000,000 for the new Korean corporation, subject to incorporation progress, diligence, and final signed subscription documents.",
     ],
     [
-      "How long does custom development take?",
-      "A custom function within the agreed scope is targeted for completion in approximately two weeks after requirements and payment confirmation.",
+      "Which projects are treated as major portfolio references?",
+      "RealSun Solar NFC Platform, the proprietary decentralized OTC platform, Lart NFC and staking platform, and ILOVEKOREA.AI are organized as the major portfolio references.",
     ],
     [
-      "How is the KRW 5,000,000 amount converted to USDT?",
-      "The final USDT amount is calculated using the exchange-rate source and reference time stated in the invoice or project agreement.",
+      "What is the prepaid card business status?",
+      "The prepaid card business registration and operation are described as in progress, with a KRW 3,000,000,000 investment in progress and 15% expected allocation, subject to final documentation.",
     ],
     [
-      "What is the monthly payment?",
-      "The commercial structure includes a monthly payment equivalent to KRW 1,200,000, paid in USDT to the wallet confirmed in the signed invoice, beginning from the agreed service commencement date.",
+      "How is the Thai BOI issue described?",
+      "The page notes that BOI corporation approval is difficult, actual costs can be KRW 300,000,000 to 400,000,000, and comparable companies may trade at KRW 1,300,000,000 to 1,500,000,000 even without track record.",
     ],
     [
-      "How is the 3% fee calculated?",
-      "The 3% fee is applied to eligible transactions processed through the solution. The exact calculation basis, settlement cycle, refund treatment, taxes, and excluded transactions will be defined in the final agreement.",
+      "Does this page promise investment returns?",
+      "No. Amounts, valuations, and equity allocations are presented as references, scheduled terms, or expected terms. Final investment rights depend on signed agreements and diligence.",
     ],
   ],
   ko: [
     [
-      "Pay Solution에는 무엇이 포함되나요?",
-      "Pay Solution에는 핵심 결제 화면, 거래 관리, 관리자 도구, 리포트, 합의된 연동 기능이 포함됩니다. 최종 범위는 프로젝트 계약서에 명시됩니다.",
+      "Nexus One은 어떤 회사인가요?",
+      "Nexus One은 김동혁 대표의 기존 Logiconfire 개인사업자 Web3 개발 포트폴리오를 승계하기 위한 신규 한국 법인으로 제시됩니다.",
     ],
     [
-      "Shopping Mall Solution에는 무엇이 포함되나요?",
-      "상품 관리, 고객 계정, 장바구니, 결제, 주문, 프로모션, 판매자 기능, 결제 연동, 관리자 대시보드 등을 포함할 수 있습니다.",
+      "예정 법인 투자 라운드는 무엇인가요?",
+      "현재 레퍼런스는 신규 한국 법인 기준 KRW 2,000,000,000의 15% 배정 예정이며, 법인 설립 진행, 실사, 최종 투자계약 체결을 전제로 합니다.",
     ],
     [
-      "맞춤 개발은 얼마나 걸리나요?",
-      "합의된 범위의 맞춤 기능은 요구사항 및 결제 확인 후 약 2주 내 완료를 목표로 합니다.",
+      "주요 포트폴리오 레퍼런스는 무엇인가요?",
+      "RealSun Solar NFC Platform, 자체 탈중앙화 OTC 플랫폼, Lart NFC 및 스테이킹 플랫폼, ILOVEKOREA.AI를 주요 포트폴리오로 정리했습니다.",
     ],
     [
-      "KRW 5,000,000은 USDT로 어떻게 환산되나요?",
-      "최종 USDT 금액은 인보이스 또는 프로젝트 계약서에 명시된 환율 기준과 기준 시점을 사용해 계산됩니다.",
+      "선불카드 사업 상태는 무엇인가요?",
+      "선불카드 사업자 등록 및 운영은 진행 중이며, KRW 3,000,000,000 투자 진행과 15% 지분 배정 예상으로 표기했습니다. 최종 조건은 문서화가 필요합니다.",
     ],
     [
-      "월 결제 조건은 무엇인가요?",
-      "상업 구조에는 KRW 1,200,000 상당의 월 서비스 리테이너가 포함되며, 서명된 인보이스에서 확정되는 USDT 지갑으로 결제됩니다.",
+      "태국 BOI 이슈는 어떻게 설명하나요?",
+      "BOI 법인 승인 난이도, 실제 비용 KRW 300,000,000-400,000,000 수준, 실적이 없어도 KRW 1,300,000,000-1,500,000,000 수준에서 거래되는 시장 상황을 실사 참고 정보로 설명합니다.",
     ],
     [
-      "3% 수수료는 어떻게 계산되나요?",
-      "3% 수수료는 솔루션을 통해 처리되는 대상 거래에 적용됩니다. 정확한 계산 기준, 정산 주기, 환불 처리, 세금, 제외 거래는 최종 계약서에서 정의됩니다.",
+      "이 페이지가 투자 수익을 약속하나요?",
+      "아니요. 금액, 가치, 지분 배정은 레퍼런스, 예정 조건 또는 예상 조건으로 제시되며 최종 권리는 서명 계약과 실사에 따릅니다.",
     ],
   ],
 };
 
 const requiredSolutions: Record<Locale, string[]> = {
   en: [
-    "Pay Solution",
-    "Shopping Mall Solution",
-    "Both Solutions",
-    "Custom Development",
+    "Nexus One corporation round",
+    "Portfolio inheritance",
+    "Prepaid card business",
+    "Moden Members project",
+    "Thailand BOI and platform operation",
   ],
-  ko: ["Pay Solution", "Shopping Mall Solution", "두 솔루션 모두", "맞춤 개발"],
+  ko: [
+    "Nexus One 법인 라운드",
+    "포트폴리오 승계",
+    "선불카드 사업",
+    "Moden Members 프로젝트",
+    "태국 BOI 및 플랫폼 운영",
+  ],
 };
 
 const diligenceRows: Record<Locale, Array<[string, string, string, string]>> = {
   en: [
-    ["Payment rails", "Ready", "API + merchant workflow", "Verified"],
-    ["Commerce engine", "Ready", "Catalog, cart, order stack", "Verified"],
-    ["Custom functions", "Scoped", "Two-week target window", "In review"],
-    ["USDT settlement", "Available", "Project payment only", "Controlled"],
-    ["Compliance posture", "Jurisdictional", "Reviewed before launch", "Required"],
+    ["Corporation", "In progress", "Busan Blockchain Special Zone", "Formation"],
+    ["Round", "Scheduled", "KRW 2B / 15%", "Terms"],
+    ["Portfolio", "Organized", "Logiconfire inheritance", "Reference"],
+    ["Prepaid card", "In progress", "KRW 3B / 15% expected", "Ongoing"],
+    ["Thailand BOI", "Diligence", "Cost and approval constraints", "Risk"],
   ],
   ko: [
-    ["결제 레일", "준비됨", "API + 가맹점 흐름", "확인"],
-    ["커머스 엔진", "준비됨", "카탈로그, 장바구니, 주문", "확인"],
-    ["맞춤 기능", "범위 확정", "2주 목표 기간", "검토 중"],
-    ["USDT 정산", "가능", "프로젝트 결제 용도", "통제"],
-    ["컴플라이언스", "관할권 기준", "출시 전 검토", "필수"],
+    ["법인", "진행 중", "부산 블록체인 특구", "설립"],
+    ["라운드", "예정", "KRW 20억 / 15%", "조건"],
+    ["포트폴리오", "정리됨", "Logiconfire 승계", "레퍼런스"],
+    ["선불카드", "진행 중", "KRW 30억 / 15% 예상", "진행"],
+    ["태국 BOI", "실사", "비용 및 승인 제약", "리스크"],
   ],
 };
 
 const projectCategoryKo: Record<string, string> = {
+  "Solar NFC Platform": "태양광 NFC 플랫폼",
+  "Decentralized OTC Platform": "탈중앙화 OTC 플랫폼",
+  "NFC + Staking Platform": "NFC + 스테이킹 플랫폼",
+  "Real-Time Translation Community App": "실시간 번역 커뮤니티 앱",
+  "Prepaid Card Operation": "선불카드 운영",
+  "Membership Platform": "멤버십 플랫폼",
   "EVM Blockchain Mainnet": "EVM 블록체인 메인넷",
   "AI Community Platform": "AI 커뮤니티 플랫폼",
   "NFT Marketplace": "NFT 마켓플레이스",
@@ -592,6 +625,8 @@ const projectCategoryKo: Record<string, string> = {
 };
 
 const projectTypeKo: Record<string, string> = {
+  "Major Portfolio": "주요 포트폴리오",
+  "Ongoing Project": "진행 프로젝트",
   "Blockchain Infrastructure": "블록체인 인프라",
   "AI + Web Platform": "AI + 웹 플랫폼",
   Web3: "Web3",
@@ -601,6 +636,9 @@ const projectTypeKo: Record<string, string> = {
 };
 
 const projectPeriodKo: Record<string, string> = {
+  "Proprietary platform": "자체 플랫폼",
+  "Registration and operation in progress": "사업자 등록 및 운영 진행 중",
+  "Development in progress": "개발 진행 중",
   "Approximately 12 months": "약 12개월",
   "Approximately 6 months": "약 6개월",
   "Approximately 5 months": "약 5개월",
@@ -609,130 +647,144 @@ const projectPeriodKo: Record<string, string> = {
   "Approximately 2 months": "약 2개월",
 };
 
+const projectReferenceKo: Record<string, string> = {
+  "KRW 140,000,000 development-cost reference": "KRW 140,000,000 개발비 레퍼런스",
+  "Private platform reference": "비공개 자체 플랫폼 레퍼런스",
+  "Proprietary platform reference": "자체 플랫폼 레퍼런스",
+  "Foreigner-to-merchant communication app": "외국인-상점 실시간 커뮤니케이션 앱",
+  "KRW 3,000,000,000 investment in progress": "KRW 3,000,000,000 투자 진행 중",
+  "KRW 100,000,000 development project": "KRW 100,000,000 개발 프로젝트",
+};
+
 const copy = {
   en: {
     skip: "Skip to main content",
-    navCta: "Request a Demo",
-    navPrimary: "Start a Project",
+    navCta: "Request Diligence",
+    navPrimary: "Discuss Investment",
     hero: {
-      kicker: "Operating system for payment and commerce diligence",
-      title: "Payment and Commerce Solutions",
-      accent: "Built for Operators",
+      kicker: "Korean investment reference for Web3 portfolio diligence",
+      title: "Nexus One",
+      accent: "Web3 Portfolio Holding Company",
       lead:
-        "Launch payment, commerce, and custom platform infrastructure with NanoCapital's proven development team.",
-      primary: "Request Demo",
+        "A new Korean corporation in formation, organized to inherit Logiconfire's Web3 development portfolio and operate blockchain platform opportunities across Korea and Thailand.",
+      primary: "Request Diligence",
       secondary: "View Portfolio",
     },
     terminal: {
-      label: "NanoCapital diligence terminal",
+      label: "Nexus One diligence terminal",
       topline: "Investor diligence console",
-      proof: "Operational proof",
-      metricOneLabel: "Solution tracks",
-      metricOneValue: "Pay + Mall",
-      metricTwoLabel: "Commercial basis",
-      metricTwoValue: "Invoice confirmed",
+      proof: "Portfolio proof",
+      metricOneLabel: "Round reference",
+      metricOneValue: "KRW 2B",
+      metricTwoLabel: "Equity reference",
+      metricTwoValue: "15%",
       columns: ["Workstream", "Status", "Evidence", "Signal"],
-      footer: "API integration flow",
-      final: "Final amount confirmed at payment",
+      footer: "Korea and Thailand operating structure",
+      final: "Final terms subject to signed agreement",
     },
     sections: {
-      solutionKicker: "Solution overview",
-      solutionTitle: "Core Payment and Commerce Infrastructure",
+      solutionKicker: "Corporation overview",
+      solutionTitle: "New Korean Corporation for Web3 Portfolio Operations",
       solutionBody:
-        "NanoCapital packages payment and shopping mall systems as reusable operating capability, then adapts them around workflow, settlement, and market launch needs.",
+        "Nexus One is organized as a Korean corporation inheriting Logiconfire's Web3 development portfolio, with incorporation in progress in the Busan Blockchain Special Zone.",
       payBody:
-        "A customizable payment infrastructure designed for merchants, platforms, and digital businesses.",
+        "Corporate structure and portfolio inheritance basis for Korean investor diligence.",
       mallBody:
-        "A ready-to-customize e-commerce and shopping mall platform for businesses that want to launch quickly while maintaining control over their brand and operations.",
-      customKicker: "Custom development",
-      customTitle: "Custom Functions Without Rebuilding the Stack",
+        "Operating portfolio spanning Korea development-zone activity, Thailand platform operation, and current investment-linked projects.",
+      customKicker: "Execution path",
+      customTitle: "From Portfolio Transfer to Operating Holding Company",
       customBody:
-        "Additional functionality can be developed around payment, commerce, workflow, or platform requirements.",
-      timeLabel: "Estimated Custom Function Development Period",
-      timeValue: "Approximately 2 Weeks",
+        "The portfolio is being organized for investor review while corporation formation, round documentation, and current project execution continue.",
+      timeLabel: "Primary formation location",
+      timeValue: "Busan Blockchain Special Zone",
       timeBody:
-        "The delivery schedule begins after the requirements, scope, and payment have been confirmed. Major changes or additional functions may require a revised timeline.",
-      termsKicker: "Commercial terms",
-      termsTitle: "Transparent Commercial Structure",
+        "The corporation is described as in progress. Timing, rights, and allocations remain subject to incorporation status, diligence, and final agreements.",
+      termsKicker: "Investment conditions",
+      termsTitle: "Structured Reference Terms for Korean Investors",
       termsBody:
-        "USD and USDT figures are estimates. The final payment amount is confirmed using the exchange rate stated when the invoice or payment request is issued.",
-      exchangeLabel: "Exchange-rate reference",
-      exchangeValue: "Source and timestamp are stated in the signed invoice.",
+        "Investment amounts, equity allocations, and project values are presented as management-provided references unless confirmed in signed agreements.",
+      exchangeLabel: "BOI reference note",
+      exchangeValue: "Thai BOI corporation approval is difficult and cost-intensive.",
       compliance:
-        "USDT transfer is presented only as a project payment, development deposit, service retainer, or transaction settlement method. It is not described as an investment, and this website does not promise returns, interest, profit, or appreciation from USDT.",
-      timelineKicker: "Project timeline",
-      timelineTitle: "Agreement to Launch",
+        "This page is a portfolio and investment reference surface. It does not promise returns, interest, profit, appreciation, regulatory approval, or investment completion. Final conditions require legal, tax, compliance, corporate, and investment-document review.",
+      timelineKicker: "Current status",
+      timelineTitle: "Corporation and Portfolio Roadmap",
       timelineDisclaimer:
-        "The two-week timeline applies to the agreed custom function scope. Additional integrations, external approvals, compliance reviews, or scope changes may affect delivery time.",
-      portfolioKicker: "Development portfolio",
-      portfolioTitle: "Proven Experience Across AI, FinTech, Enterprise, and Web3",
+        "BOI corporation approval in Thailand is described as difficult, with actual costs alone estimated at KRW 300,000,000 to 400,000,000. Comparable companies may trade around KRW 1,300,000,000 to 1,500,000,000 even without track record, subject to market conditions and diligence.",
+      portfolioKicker: "Organized portfolio",
+      portfolioTitle: "Major References and Current Projects",
       portfolioBody:
-        "Delivered work spans blockchain infrastructure, AI platforms, payment systems, enterprise software, RWA, SocialFi, NFT, and prediction markets.",
+        "Major references include RealSun, decentralized OTC, Lart NFC staking, and ILOVEKOREA.AI. Additional portfolio items are retained as supporting technology references.",
       techKicker: "Technology expertise",
-      techTitle: "Technology Capabilities Behind the Build",
+      techTitle: "Capabilities Behind the Portfolio",
       trustKicker: "Decision factors",
-      trustTitle: "Why Work With NanoCapital",
-      securityKicker: "Security and compliance",
-      securityTitle: "Built for Responsible Business Operations",
+      trustTitle: "Why the Structure Is Diligence-Ready",
+      securityKicker: "Risk and compliance",
+      securityTitle: "Responsible Investment Framing",
       securityBody:
-        "NanoCapital provides technology and software solutions. Availability of payment, wallet, blockchain, token, or settlement functions may depend on the laws, licensing requirements, and regulatory rules of the client's operating jurisdiction.",
+        "Availability of corporate, platform, payment, wallet, blockchain, token, BOI, or settlement functions may depend on the laws, licensing requirements, approvals, and regulatory rules of each operating jurisdiction.",
       faqKicker: "Investor questions",
       faqTitle: "Common Questions",
     },
     termsLabels: {
-      payment: "Payment method",
+      payment: "Condition",
       description: "Description",
-      timing: "Development timing",
+      timing: "Current timing",
     },
-    portfolioLabels: {
-      period: "Development period",
-      category: "Category",
-      website: "Website",
-      action: "View Project",
-    },
+      portfolioLabels: {
+        period: "Development period",
+        category: "Category",
+        website: "Website",
+        reference: "Reference",
+        private: "Private / proprietary",
+        noLink: "No public link",
+        otherTitle: "Other Portfolio References",
+        otherBody: "Supporting technology references are listed compactly for review after the four major portfolio items.",
+        action: "View Project",
+      },
     contact: {
-      kicker: "Project intake",
-      title: "Ready to Launch Your Payment and Commerce Platform?",
+      kicker: "Investor intake",
+      title: "Request the Nexus One Diligence Pack",
       body:
-        "Tell us about your business model, required payment flow, shopping mall functions, and integration needs. Our team will prepare a suitable implementation plan.",
-      proposal: "Request a Proposal",
-      consult: "Schedule a Consultation",
+        "Share your investor profile, required materials, and questions about the corporation round, portfolio inheritance, or Thailand operating structure.",
+      proposal: "Request Materials",
+      consult: "Discuss Terms",
       name: "Name",
       company: "Company",
       email: "Email",
       phone: "Phone or Messenger",
       country: "Country",
-      launchDate: "Expected launch date",
-      required: "Required solution",
-      select: "Select a solution",
-      requirements: "Project requirements",
+      launchDate: "Expected review date",
+      required: "Diligence topic",
+      select: "Select a topic",
+      requirements: "Questions or required materials",
       acknowledgement:
-        "I understand that displayed USD and USDT amounts are estimates and that the final amount will be confirmed in the official agreement or invoice.",
+        "I understand that listed amounts and equity allocations are references, scheduled terms, or expected terms, and final rights require signed agreements.",
       loading: "Preparing brief...",
-      submit: "Prepare Project Brief",
+      submit: "Prepare Diligence Brief",
       success:
-        "Project brief prepared on this page. Connect an approved email or CRM endpoint before using this form for live submissions.",
+        "Diligence brief prepared on this page. Connect an approved email or CRM endpoint before using this form for live submissions.",
     },
     validation: {
-      requiredSolution: "a required solution",
+      requiredSolution: "a diligence topic",
       requiredPrefix: "Please enter",
       email: "Email needs a valid format, for example name@company.com.",
       acknowledgement:
-        "Please confirm that final amounts are set by the official agreement or invoice.",
+        "Please confirm that final rights require signed agreements.",
       fields: {
         name: "name",
         company: "company",
         email: "email",
         country: "country",
-        requirements: "project requirements",
+        requirements: "questions or required materials",
       },
     },
     footer:
-      "Pay Solution, Shopping Mall Solution, Custom Development, and enterprise technology delivery.",
+      "Nexus One corporation formation, Web3 portfolio inheritance, Korean investor diligence, and Thailand blockchain platform operations.",
     footerLinks: [
-      "Pay Solution",
-      "Shopping Mall Solution",
-      "Custom Development",
+      "Corporation",
+      "Portfolio",
+      "Investment Terms",
       "Portfolio",
       "Privacy Policy",
       "Terms of Service",
@@ -742,127 +794,132 @@ const copy = {
   },
   ko: {
     skip: "본문으로 바로가기",
-    navCta: "데모 요청",
-    navPrimary: "프로젝트 시작",
+    navCta: "실사 자료 요청",
+    navPrimary: "투자 논의",
     hero: {
-      kicker: "결제 및 커머스 실사를 위한 운영 시스템",
-      title: "결제 및 커머스 솔루션",
-      accent: "운영자를 위해 설계",
+      kicker: "한국 투자자 실사용 Web3 포트폴리오 레퍼런스",
+      title: "Nexus One",
+      accent: "Web3 포트폴리오 지주회사",
       lead:
-        "NanoCapital의 검증 가능한 개발 경험을 기반으로 결제, 커머스, 맞춤 플랫폼 인프라를 출시합니다.",
-      primary: "데모 요청",
+        "Nexus One은 Logiconfire Web3 개발 자산을 승계해 부산 블록체인 특구 개발과 태국 플랫폼 운영을 연결하는 신규 한국 법인입니다.",
+      primary: "실사 자료 요청",
       secondary: "포트폴리오 보기",
     },
     terminal: {
-      label: "NanoCapital 실사 터미널",
+      label: "Nexus One 실사 터미널",
       topline: "투자자 실사 콘솔",
-      proof: "운영 증거",
-      metricOneLabel: "솔루션 트랙",
-      metricOneValue: "Pay + Mall",
-      metricTwoLabel: "상업 기준",
-      metricTwoValue: "인보이스 확정",
+      proof: "포트폴리오 근거",
+      metricOneLabel: "라운드 기준",
+      metricOneValue: "KRW 20억",
+      metricTwoLabel: "지분 기준",
+      metricTwoValue: "15%",
       columns: ["업무 영역", "상태", "근거", "신호"],
-      footer: "API 연동 흐름",
-      final: "결제 시 최종 금액 확정",
+      footer: "한국 및 태국 운영 구조",
+      final: "최종 조건은 서명 계약 기준",
     },
     sections: {
-      solutionKicker: "솔루션 개요",
-      solutionTitle: "핵심 결제 및 커머스 인프라",
+      solutionKicker: "법인 개요",
+      solutionTitle: "Web3 포트폴리오 운영을 위한 신규 한국 법인",
       solutionBody:
-        "NanoCapital은 결제 시스템과 쇼핑몰 시스템을 재사용 가능한 운영 역량으로 패키징하고, 업무 흐름, 정산, 시장 출시 요구에 맞춰 조정합니다.",
+        "Nexus One은 Logiconfire의 Web3 개발 포트폴리오를 승계하는 한국 법인입니다. 현재 부산 블록체인 특구 내 설립 절차가 진행 중입니다.",
       payBody:
-        "가맹점, 플랫폼, 디지털 비즈니스를 위한 맞춤형 결제 인프라입니다.",
+        "한국 투자자 실사를 위한 법인 구조와 포트폴리오 승계 기준입니다.",
       mallBody:
-        "빠른 출시와 브랜드/운영 통제를 동시에 원하는 비즈니스를 위한 맞춤형 이커머스 및 쇼핑몰 플랫폼입니다.",
-      customKicker: "맞춤 개발",
-      customTitle: "스택을 다시 만들지 않는 맞춤 기능 개발",
+        "한국 특구 개발, 태국 플랫폼 운영, 투자 연계 진행 프로젝트를 포함하는 운영 포트폴리오입니다.",
+      customKicker: "실행 경로",
+      customTitle: "포트폴리오 승계와 지주회사 운영",
       customBody:
-        "결제, 커머스, 업무 흐름, 플랫폼 요구사항에 맞춰 추가 기능을 개발할 수 있습니다.",
-      timeLabel: "예상 맞춤 기능 개발 기간",
-      timeValue: "약 2주",
+        "법인 설립, 라운드 문서화, 현재 진행 프로젝트가 병행되는 동안 포트폴리오를 투자자 검토용으로 정리합니다.",
+      timeLabel: "주요 설립 지역",
+      timeValue: "부산 블록체인 특구",
       timeBody:
-        "납품 일정은 요구사항, 범위, 결제가 확인된 후 시작됩니다. 큰 변경이나 추가 기능은 일정 조정이 필요할 수 있습니다.",
-      termsKicker: "상업 조건",
-      termsTitle: "투명한 상업 구조",
+        "법인은 설립 진행 중으로 설명됩니다. 일정, 권리, 지분 배정은 법인 설립 상태, 실사, 최종 계약에 따릅니다.",
+      termsKicker: "투자 조건",
+      termsTitle: "현재 검토 중인 투자 조건",
       termsBody:
-        "USD 및 USDT 금액은 추정치입니다. 최종 결제 금액은 인보이스 또는 결제 요청서 발행 시 명시된 환율 기준으로 확정됩니다.",
-      exchangeLabel: "환율 기준",
-      exchangeValue: "환율 출처와 기준 시점은 서명된 인보이스에 명시됩니다.",
+        "아래 금액과 지분율은 투자 검토용 기준입니다. 최종 권리와 조건은 법인 설립, 실사, 서명 계약을 통해 확정됩니다.",
+      exchangeLabel: "BOI 참고 사항",
+      exchangeValue: "태국 BOI 법인은 승인 난이도와 실제 비용 부담이 큰 구조입니다.",
       compliance:
-        "USDT 이체는 프로젝트 결제, 개발 예치금, 서비스 리테이너 또는 거래 정산 방식으로만 제시됩니다. 투자로 설명하지 않으며, 본 웹사이트는 USDT에 대한 수익, 이자, 이익, 가치 상승을 약속하지 않습니다.",
-      timelineKicker: "프로젝트 일정",
-      timelineTitle: "계약부터 출시까지",
+        "본 페이지는 투자 권유서가 아니라 포트폴리오 및 조건 정리 자료입니다. 수익, 이자, 가치 상승, 규제 승인, 투자 완료를 약속하지 않으며 최종 조건은 법률, 세무, 컴플라이언스, 법인, 투자 문서 검토가 필요합니다.",
+      timelineKicker: "현재 상태",
+      timelineTitle: "법인 및 포트폴리오 로드맵",
       timelineDisclaimer:
-        "2주 일정은 합의된 맞춤 기능 범위에 적용됩니다. 추가 연동, 외부 승인, 컴플라이언스 검토, 범위 변경은 납품 일정에 영향을 줄 수 있습니다.",
-      portfolioKicker: "개발 포트폴리오",
-      portfolioTitle: "AI, 핀테크, 엔터프라이즈, Web3 경험",
+        "태국 BOI 법인 승인은 어렵고 실제 비용만 KRW 300,000,000-400,000,000 수준으로 설명됩니다. 실적이 없는 법인도 KRW 1,300,000,000-1,500,000,000 수준에서 거래될 수 있다는 시장 참고 정보는 조건과 실사에 따라 달라질 수 있습니다.",
+      portfolioKicker: "정리된 포트폴리오",
+      portfolioTitle: "주요 레퍼런스 및 현재 진행 프로젝트",
       portfolioBody:
-        "블록체인 인프라, AI 플랫폼, 결제 시스템, 엔터프라이즈 소프트웨어, RWA, SocialFi, NFT, 예측 시장 경험을 제공합니다.",
+        "주요 4개 레퍼런스를 먼저 검토하고, 그 외 프로젝트는 기술 이력으로 간결하게 확인할 수 있도록 정리했습니다.",
       techKicker: "기술 전문성",
-      techTitle: "구축을 뒷받침하는 기술 역량",
+      techTitle: "포트폴리오를 뒷받침하는 기술 역량",
       trustKicker: "의사결정 기준",
-      trustTitle: "NanoCapital과 협업해야 하는 이유",
-      securityKicker: "보안 및 컴플라이언스",
-      securityTitle: "책임 있는 비즈니스 운영을 위한 설계",
+      trustTitle: "실사 가능한 구조로 정리된 이유",
+      securityKicker: "리스크 및 컴플라이언스",
+      securityTitle: "책임 있는 투자 설명 방식",
       securityBody:
-        "NanoCapital은 기술 및 소프트웨어 솔루션을 제공합니다. 결제, 지갑, 블록체인, 토큰, 정산 기능의 제공 가능 여부는 고객 운영 관할권의 법률, 라이선스 요건, 규제 규칙에 따라 달라질 수 있습니다.",
+        "법인, 플랫폼, 결제, 지갑, 블록체인, 토큰, BOI, 정산 기능의 제공 가능 여부는 각 운영 관할권의 법률, 라이선스 요건, 승인, 규제 규칙에 따라 달라질 수 있습니다.",
       faqKicker: "투자자 질문",
       faqTitle: "자주 묻는 질문",
     },
     termsLabels: {
-      payment: "결제 방식",
+      payment: "조건",
       description: "설명",
-      timing: "개발 시점",
+      timing: "현재 시점",
     },
-    portfolioLabels: {
-      period: "개발 기간",
-      category: "카테고리",
-      website: "웹사이트",
-      action: "프로젝트 보기",
-    },
+      portfolioLabels: {
+        period: "개발 기간",
+        category: "카테고리",
+        website: "웹사이트",
+        reference: "레퍼런스",
+        private: "비공개 / 자체 플랫폼",
+        noLink: "공개 링크 없음",
+        otherTitle: "기타 포트폴리오 레퍼런스",
+        otherBody: "주요 4개 항목 이후 검토할 수 있는 보조 기술 이력입니다.",
+        action: "프로젝트 보기",
+      },
     contact: {
-      kicker: "프로젝트 접수",
-      title: "결제 및 커머스 플랫폼 출시를 준비하시나요?",
+      kicker: "투자자 문의",
+      title: "Nexus One 실사 자료 요청",
       body:
-        "비즈니스 모델, 필요한 결제 흐름, 쇼핑몰 기능, 연동 요구사항을 알려주세요. 적합한 구현 계획을 준비할 수 있습니다.",
-      proposal: "제안 요청",
-      consult: "상담 예약",
+        "투자자 프로필, 필요한 자료, 법인 라운드, 포트폴리오 승계, 태국 운영 구조에 대한 질문을 남겨주세요.",
+      proposal: "자료 요청",
+      consult: "조건 논의",
       name: "이름",
       company: "회사",
       email: "이메일",
       phone: "전화 또는 메신저",
       country: "국가",
-      launchDate: "예상 출시일",
-      required: "필요한 솔루션",
-      select: "솔루션 선택",
-      requirements: "프로젝트 요구사항",
+      launchDate: "예상 검토일",
+      required: "실사 주제",
+      select: "주제 선택",
+      requirements: "질문 또는 필요한 자료",
       acknowledgement:
-        "표시된 USD 및 USDT 금액은 추정치이며 최종 금액은 공식 계약서 또는 인보이스에서 확정됨을 이해합니다.",
+        "표시된 금액과 지분 배정은 레퍼런스, 예정 조건 또는 예상 조건이며 최종 권리는 서명 계약이 필요함을 이해합니다.",
       loading: "브리프 준비 중...",
-      submit: "프로젝트 브리프 준비",
+      submit: "실사 브리프 준비",
       success:
-        "프로젝트 브리프가 이 페이지에서 준비되었습니다. 실제 제출용으로 사용하기 전 승인된 이메일 또는 CRM 엔드포인트를 연결하세요.",
+        "실사 브리프가 이 페이지에서 준비되었습니다. 실제 제출용으로 사용하기 전 승인된 이메일 또는 CRM 엔드포인트를 연결하세요.",
     },
     validation: {
-      requiredSolution: "필요한 솔루션",
+      requiredSolution: "실사 주제",
       requiredPrefix: "입력해 주세요:",
       email: "올바른 이메일 형식이 필요합니다. 예: name@company.com",
       acknowledgement:
-        "최종 금액이 공식 계약서 또는 인보이스에서 확정됨을 확인해 주세요.",
+        "최종 권리가 서명 계약을 통해 확정됨을 확인해 주세요.",
       fields: {
         name: "이름",
         company: "회사",
         email: "이메일",
         country: "국가",
-        requirements: "프로젝트 요구사항",
+        requirements: "질문 또는 필요한 자료",
       },
     },
     footer:
-      "Pay Solution, Shopping Mall Solution, 맞춤 개발, 엔터프라이즈 기술 제공.",
+      "Nexus One 법인 설립, Web3 포트폴리오 승계, 한국 투자자 실사, 태국 블록체인 플랫폼 운영.",
     footerLinks: [
-      "Pay Solution",
-      "Shopping Mall Solution",
-      "맞춤 개발",
+      "법인 구조",
+      "포트폴리오",
+      "투자 조건",
       "포트폴리오",
       "개인정보 처리방침",
       "서비스 약관",
@@ -883,32 +940,29 @@ function localizeProjectValue(
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "NanoCapital",
-  url: "https://nanocapital-payment-commerce.anantasuk.chatgpt.site",
+  name: "Nexus One",
+  url: "https://new-landingpages-test-ui-ai-speednano.vercel.app",
   description:
-    "NanoCapital provides payment, commerce, blockchain, AI, Web2, Web3, FinTech, ERP, NFT, RWA, DEX, and enterprise software development solutions.",
-  sameAs: projects.map((project) => project.website),
+    "Nexus One is a new Korean corporation in formation for Web3 portfolio inheritance, Busan Blockchain Special Zone development, and Thailand blockchain platform operations.",
+  sameAs: projects.flatMap((project) => (project.website ? [project.website] : [])),
   contactPoint: {
     "@type": "ContactPoint",
-    contactType: "Business development",
+    contactType: "Investor diligence",
     availableLanguage: ["English", "Korean"],
   },
 };
 
-const softwareSchema = {
+const portfolioSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "NanoCapital Pay Solution",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "KRW",
-    price: "5000000",
-    description:
-      "Custom function development deposit. Final amount confirmed at payment.",
-  },
-  featureList: [...payFeatures.en, ...mallFeatures.en, ...keywords.en],
+  "@type": "ItemList",
+  name: "Nexus One Web3 Portfolio References",
+  itemListElement: projects.slice(0, 6).map((project, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: project.name,
+    url: project.website,
+    description: project.reference ?? project.category,
+  })),
 };
 
 function SectionHeading({
@@ -959,6 +1013,13 @@ export default function Home() {
 
     return projects.filter((project) => project.tags.includes(activeFilter as ProjectTag));
   }, [activeFilter]);
+
+  const majorProjects = filteredProjects.filter(
+    (project) => project.type === "Major Portfolio",
+  );
+  const supportingProjects = filteredProjects.filter(
+    (project) => project.type !== "Major Portfolio",
+  );
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -1013,7 +1074,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([organizationSchema, softwareSchema]),
+          __html: JSON.stringify([organizationSchema, portfolioSchema]),
         }}
       />
       <a className="skip-link" href="#main-content">
@@ -1021,9 +1082,9 @@ export default function Home() {
       </a>
       <div className="site-shell">
         <header className="nav-wrap">
-          <a className="brand" href="#home" aria-label="NanoCapital home">
+          <a className="brand" href="#home" aria-label="Nexus One home">
             <span className="brand-mark">N</span>
-            <span>NanoCapital</span>
+            <span>Nexus One</span>
           </a>
           <nav aria-label="Primary navigation">
             {navItems.map((item) => (
@@ -1135,7 +1196,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="metric-strip" aria-label="NanoCapital operating metrics">
+            <div className="metric-strip" aria-label="Nexus One operating metrics">
               {metrics[locale].map(([value, label], index) => (
                 <div key={label} style={motionIndex(index)}>
                   <strong>{value}</strong>
@@ -1154,13 +1215,13 @@ export default function Home() {
             <div className="solution-grid">
               <article className="solution-card" style={motionIndex(0)}>
                 <span className="card-index">01</span>
-                <h3>NanoCapital Pay Solution</h3>
+                <h3>Nexus One Corporation</h3>
                 <p>{t.sections.payBody}</p>
                 <FeatureList items={payFeatures[locale]} />
               </article>
               <article className="solution-card dark-card" style={motionIndex(1)}>
                 <span className="card-index">02</span>
-                <h3>Shopping Mall Solution</h3>
+                <h3>Portfolio Operations</h3>
                 <p>{t.sections.mallBody}</p>
                 <FeatureList items={mallFeatures[locale]} />
               </article>
@@ -1266,7 +1327,7 @@ export default function Home() {
               </div>
             </div>
             <div className="portfolio-grid">
-              {filteredProjects.map((project, index) => (
+              {majorProjects.map((project, index) => (
                 <article
                   className="portfolio-card"
                   key={project.name}
@@ -1303,15 +1364,99 @@ export default function Home() {
                     </div>
                     <div>
                       <dt>{t.portfolioLabels.website}</dt>
-                      <dd>{project.website.replace("https://", "")}</dd>
+                      <dd>
+                        {project.website
+                          ? project.website.replace("https://", "")
+                          : project.type === "Major Portfolio"
+                            ? t.portfolioLabels.private
+                            : t.portfolioLabels.noLink}
+                      </dd>
                     </div>
+                    {project.reference ? (
+                      <div>
+                        <dt>{t.portfolioLabels.reference}</dt>
+                        <dd>
+                          {localizeProjectValue(
+                            project.reference,
+                            locale,
+                            projectReferenceKo,
+                          )}
+                        </dd>
+                      </div>
+                    ) : null}
                   </dl>
-                  <a href={project.website} rel="noreferrer" target="_blank">
-                    {t.portfolioLabels.action}
-                  </a>
+                  {project.website ? (
+                    <a href={project.website} rel="noreferrer" target="_blank">
+                      {t.portfolioLabels.action}
+                    </a>
+                  ) : (
+                    <p className="portfolio-private">
+                      {project.type === "Major Portfolio"
+                        ? t.portfolioLabels.private
+                        : t.portfolioLabels.noLink}
+                    </p>
+                  )}
                 </article>
               ))}
             </div>
+            {supportingProjects.length > 0 ? (
+              <div className="other-portfolio">
+                <div className="other-portfolio-head">
+                  <h3>{t.portfolioLabels.otherTitle}</h3>
+                  <p>{t.portfolioLabels.otherBody}</p>
+                </div>
+                <div className="other-reference-grid">
+                  {supportingProjects.map((project, index) => (
+                    <article
+                      className="other-reference-card"
+                      key={project.name}
+                      style={motionIndex(index)}
+                    >
+                      <span>
+                        {localizeProjectValue(project.type, locale, projectTypeKo)}
+                      </span>
+                      <h4>{project.name}</h4>
+                      <p>
+                        {localizeProjectValue(
+                          project.category,
+                          locale,
+                          projectCategoryKo,
+                        )}
+                      </p>
+                      <div className="other-reference-meta">
+                        <strong>
+                          {localizeProjectValue(
+                            project.period,
+                            locale,
+                            projectPeriodKo,
+                          )}
+                        </strong>
+                        {project.reference ? (
+                          <em>
+                            {localizeProjectValue(
+                              project.reference,
+                              locale,
+                              projectReferenceKo,
+                            )}
+                          </em>
+                        ) : null}
+                      </div>
+                      {project.website ? (
+                        <a href={project.website} rel="noreferrer" target="_blank">
+                          {project.website.replace("https://", "")}
+                        </a>
+                      ) : (
+                        <p className="portfolio-private">
+                          {project.type === "Major Portfolio"
+                            ? t.portfolioLabels.private
+                            : t.portfolioLabels.noLink}
+                        </p>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </section>
 
           <section className="section split-section" id="technology">
@@ -1513,9 +1658,9 @@ export default function Home() {
 
         <footer className="footer">
           <div>
-            <a className="brand" href="#home" aria-label="NanoCapital home">
+            <a className="brand" href="#home" aria-label="Nexus One home">
               <span className="brand-mark">N</span>
-              <span>NanoCapital</span>
+              <span>Nexus One</span>
             </a>
             <p>{t.footer}</p>
           </div>
